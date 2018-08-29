@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Drivefly</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+            integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+            crossorigin="anonymous">
+
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css" >
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" >
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+        crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+    </head>
+    <body>
+        <!-- styled nav by thais -->
+            <!-- <input type="hidden" id="hdn_service" value="0">
+            <input type="hidden" id="hdn_airport" value="0">
+            <input type="hidden" id="hdn_agent" value="0">
+            <input type="hidden" id="hdn_period" value="0">  -->
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm px-sm-0">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-plane"></i><b> rishi2</b></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse justify-content-between" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item mx-2 active">
+                    <a class="nav-link" href="#/home">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/daily">Daily</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/stats">Stats</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/levels">Levels</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/monthly">Monthly</a>
+                  </li>
+                  <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="#">Daily without terminal</a>
+                      <a class="dropdown-item" href="#">Price scanner</a>
+                      <a class="dropdown-item" href="#">Price</a>
+                      <a class="dropdown-item" href="#">Products</a>
+                      <a class="dropdown-item" href="#">Duplicate bookings</a>
+                      <a class="dropdown-item" href="#">Extra payments</a>
+                      <a class="dropdown-item" href="#">Alerts</a>
+                      <a class="dropdown-item" href="#">Logs</a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="d-inline-flex">
+                    <form class="form-inline my-2 my-lg-0 mx-2">
+                        <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search">
+                          <div class="input-group-append"> 
+                              <button class="btn btn-outline-secondary" type="submit">Search</button> 
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-sign-out-alt"></i></a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- end styled nav by thais -->
+        <div class="container-fluid">
+            <!-- Spinner needs to be defined
+            <div id="spinner" class="none">
+                <div class="loader"></div>
+            </div> 
+            -->
+            <div class="row py-3">
+                <div class="col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-start">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> ALL
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> MG
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> PR
+                      </label>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-center">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> ALL
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> LHR
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> BHX
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> LTN
+                      </label>
+                      <!-- <label class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                        <input type="radio" name="options" id="option3" autocomplete="off" class="px-5"> &nbsp;
+                      </label>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">All</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Drivefly</a>
+                          <a class="dropdown-item" href="#">ICPR</a>
+                          <a class="dropdown-item" href="#">Skypark</a>
+                          <a class="dropdown-item" href="#">CHR</a>
+                          <a class="dropdown-item" href="#">L4P</a>
+                          <a class="dropdown-item" href="#">EX</a>
+                          <a class="dropdown-item" href="#">APH</a>
+                          <a class="dropdown-item" href="#">P-P</a>
+                          <a class="dropdown-item" href="#">SPF</a>
+                          <a class="dropdown-item" href="#">HD</a>
+                          <a class="dropdown-item" href="#">FHR</a>
+                          <a class="dropdown-item" href="#">UKPF</a>
+                          <a class="dropdown-item" href="#">NEW</a>
+                          <a class="dropdown-item" href="#">A2B</a>
+                          <a class="dropdown-item" href="#">P&amp;</a>
+                          <a class="dropdown-item" href="#">Hilton</a>
+                          <a class="dropdown-item" href="#">Ibis</a>
+                          <a class="dropdown-item" href="#">P&amp;M</a>
+                          <a class="dropdown-item" href="#">WOW</a>
+                          <a class="dropdown-item" href="#">Groupon</a>
+                          <a class="dropdown-item" href="#">ILAP</a>
+                          <a class="dropdown-item" href="#">ILMAG</a>
+                          <a class="dropdown-item" href="#">TT</a>
+                          <a class="dropdown-item" href="#">Sky Parking Services</a>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- <div class="col-xs-12 col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-end">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-secondary dropdown-toggle"data-toggle="dropdown">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> Latest
+                        </label>
+                        <div class="dropdown-menu" id="dd">
+                          <a class="dropdown-item" href="#">Today</a>
+                          <a class="dropdown-item" href="#">Tomorrow</a>
+                          <a class="dropdown-item" href="#">Today &amp; Tomorrow</a>
+                          <a class="dropdown-item" href="#">Xtra Payments Due</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="offset-md-2 col-sm-2 pb-sm-0 d-flex justify-content-md-end">
+                    <div class="input-group date pr-2">
+                      <input type="text" class="form-control" id="datepicker" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid pb-2 bg-light">
+          <div class="row">
+            <div class="col py-3">
+              <script type="text/javascript" src="js/plotlyjs-bundle.js"></script>
+            
+            
+        <script type="text/javascript" src="js/figure.js"></script>
+        
+        <div id="50ebecfe-affa-42f4-a300-156acebf3be6" class="plotly-graph-div"></div>
+        <script type="text/javascript">
+            (function(){
+                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                var gd = document.getElementById('50ebecfe-affa-42f4-a300-156acebf3be6')
+                var resizeDebounce = null;
+
+                function resizePlot() {
+                    var bb = gd.getBoundingClientRect();
+                    Plotly.relayout(gd, {
+                        width: bb.width,
+                        height: bb.height
+                    });
+                }
+
+                
+                window.addEventListener('resize', function() {
+                    if (resizeDebounce) {
+                        window.clearTimeout(resizeDebounce);
+                    }
+                    resizeDebounce = window.setTimeout(resizePlot, 100);
+                });
+                
+
+                
+                Plotly.plot(gd,  {
+                    data: figure.data,
+                    layout: figure.layout,
+                    frames: figure.frames,
+                    config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": false}
+                });
+                
+           }());
+        </script>
+
+<div class="row">
+  <div class="col pb-5">
+              <table class="table table-drivefly borderless ng-scope text-center">
+                <thead>
+                  <tr>
+                    <th class="text-left">Date</th>
+                    <th>Start</th>
+                    <th>In</th>
+                    <th>Out</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope" style="">
+                    <td class="ng-binding text-left">29th Aug</td>
+                    <td class="ng-binding">4897</td>
+                    <td class="ng-binding">355</td>
+                    <td class="ng-binding">607</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">30th Aug</td>
+                    <td class="ng-binding">4645</td>
+                    <td class="ng-binding">369</td>
+                    <td class="ng-binding">617</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">31st Aug</td>
+                    <td class="ng-binding">4397</td>
+                    <td class="ng-binding">427</td>
+                    <td class="ng-binding">635</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">1st Sep</td>
+                    <td class="ng-binding">4189</td>
+                    <td class="ng-binding">633</td>
+                    <td class="ng-binding">702</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">2nd Sep</td>
+                    <td class="ng-binding">4120</td>
+                    <td class="ng-binding">435</td>
+                    <td class="ng-binding">728</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">3rd Sep</td>
+                    <td class="ng-binding">3827</td>
+                    <td class="ng-binding">412</td>
+                    <td class="ng-binding">541</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">4th Sep</td>
+                    <td class="ng-binding">3698</td>
+                    <td class="ng-binding">401</td>
+                    <td class="ng-binding">529</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">5th Sep</td>
+                    <td class="ng-binding">3570</td>
+                    <td class="ng-binding">420</td>
+                    <td class="ng-binding">358</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">6th Sep</td>
+                    <td class="ng-binding">3632</td>
+                    <td class="ng-binding">394</td>
+                    <td class="ng-binding">349</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">7th Sep</td>
+                    <td class="ng-binding">3677</td>
+                    <td class="ng-binding">483</td>
+                    <td class="ng-binding">376</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">8th Sep</td>
+                    <td class="ng-binding">3784</td>
+                    <td class="ng-binding">550</td>
+                    <td class="ng-binding">481</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">9th Sep</td>
+                    <td class="ng-binding">3853</td>
+                    <td class="ng-binding">341</td>
+                    <td class="ng-binding">463</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">10th Sep</td>
+                    <td class="ng-binding">3731</td>
+                    <td class="ng-binding">343</td>
+                    <td class="ng-binding">368</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">11th Sep</td>
+                    <td class="ng-binding">3706</td>
+                    <td class="ng-binding">298</td>
+                    <td class="ng-binding">395</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">12th Sep</td>
+                    <td class="ng-binding">3609</td>
+                    <td class="ng-binding">339</td>
+                    <td class="ng-binding">337</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">13th Sep</td>
+                    <td class="ng-binding">3611</td>
+                    <td class="ng-binding">338</td>
+                    <td class="ng-binding">366</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">14th Sep</td>
+                    <td class="ng-binding">3583</td>
+                    <td class="ng-binding">399</td>
+                    <td class="ng-binding">361</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">15th Sep</td>
+                    <td class="ng-binding">3621</td>
+                    <td class="ng-binding">459</td>
+                    <td class="ng-binding">508</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">16th Sep</td>
+                    <td class="ng-binding">3572</td>
+                    <td class="ng-binding">289</td>
+                    <td class="ng-binding">463</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">17th Sep</td>
+                    <td class="ng-binding">3398</td>
+                    <td class="ng-binding">274</td>
+                    <td class="ng-binding">360</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">18th Sep</td>
+                    <td class="ng-binding">3312</td>
+                    <td class="ng-binding">266</td>
+                    <td class="ng-binding">389</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">19th Sep</td>
+                    <td class="ng-binding">3189</td>
+                    <td class="ng-binding">218</td>
+                    <td class="ng-binding">287</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">20th Sep</td>
+                    <td class="ng-binding">3120</td>
+                    <td class="ng-binding">248</td>
+                    <td class="ng-binding">304</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">21st Sep</td>
+                    <td class="ng-binding">3064</td>
+                    <td class="ng-binding">311</td>
+                    <td class="ng-binding">325</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">22nd Sep</td>
+                    <td class="ng-binding">3050</td>
+                    <td class="ng-binding">310</td>
+                    <td class="ng-binding">479</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">23rd Sep</td>
+                    <td class="ng-binding">2881</td>
+                    <td class="ng-binding">210</td>
+                    <td class="ng-binding">391</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">24th Sep</td>
+                    <td class="ng-binding">2700</td>
+                    <td class="ng-binding">191</td>
+                    <td class="ng-binding">315</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">25th Sep</td>
+                    <td class="ng-binding">2576</td>
+                    <td class="ng-binding">163</td>
+                    <td class="ng-binding">308</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">26th Sep</td>
+                    <td class="ng-binding">2431</td>
+                    <td class="ng-binding">185</td>
+                    <td class="ng-binding">228</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">27th Sep</td>
+                    <td class="ng-binding">2388</td>
+                    <td class="ng-binding">183</td>
+                    <td class="ng-binding">237</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">28th Sep</td>
+                    <td class="ng-binding">2334</td>
+                    <td class="ng-binding">209</td>
+                    <td class="ng-binding">285</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">29th Sep</td>
+                    <td class="ng-binding">2258</td>
+                    <td class="ng-binding">201</td>
+                    <td class="ng-binding">366</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">30th Sep</td>
+                    <td class="ng-binding">2093</td>
+                    <td class="ng-binding">140</td>
+                    <td class="ng-binding">357</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">1st Oct</td>
+                    <td class="ng-binding">1876</td>
+                    <td class="ng-binding">125</td>
+                    <td class="ng-binding">215</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">2nd Oct</td>
+                    <td class="ng-binding">1786</td>
+                    <td class="ng-binding">110</td>
+                    <td class="ng-binding">228</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">3rd Oct</td>
+                    <td class="ng-binding">1668</td>
+                    <td class="ng-binding">123</td>
+                    <td class="ng-binding">153</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">4th Oct</td>
+                    <td class="ng-binding">1638</td>
+                    <td class="ng-binding">133</td>
+                    <td class="ng-binding">177</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">5th Oct</td>
+                    <td class="ng-binding">1594</td>
+                    <td class="ng-binding">162</td>
+                    <td class="ng-binding">154</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">6th Oct</td>
+                    <td class="ng-binding">1602</td>
+                    <td class="ng-binding">166</td>
+                    <td class="ng-binding">249</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">7th Oct</td>
+                    <td class="ng-binding">1519</td>
+                    <td class="ng-binding">102</td>
+                    <td class="ng-binding">220</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">8th Oct</td>
+                    <td class="ng-binding">1401</td>
+                    <td class="ng-binding">86</td>
+                    <td class="ng-binding">171</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">9th Oct</td>
+                    <td class="ng-binding">1316</td>
+                    <td class="ng-binding">87</td>
+                    <td class="ng-binding">145</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">10th Oct</td>
+                    <td class="ng-binding">1258</td>
+                    <td class="ng-binding">104</td>
+                    <td class="ng-binding">126</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">11th Oct</td>
+                    <td class="ng-binding">1236</td>
+                    <td class="ng-binding">99</td>
+                    <td class="ng-binding">120</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">12th Oct</td>
+                    <td class="ng-binding">1215</td>
+                    <td class="ng-binding">131</td>
+                    <td class="ng-binding">148</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">13th Oct</td>
+                    <td class="ng-binding">1198</td>
+                    <td class="ng-binding">131</td>
+                    <td class="ng-binding">159</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">14th Oct</td>
+                    <td class="ng-binding">1170</td>
+                    <td class="ng-binding">89</td>
+                    <td class="ng-binding">158</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">15th Oct</td>
+                    <td class="ng-binding">1101</td>
+                    <td class="ng-binding">71</td>
+                    <td class="ng-binding">97</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">16th Oct</td>
+                    <td class="ng-binding">1075</td>
+                    <td class="ng-binding">92</td>
+                    <td class="ng-binding">131</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">17th Oct</td>
+                    <td class="ng-binding">1036</td>
+                    <td class="ng-binding">97</td>
+                    <td class="ng-binding">103</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">18th Oct</td>
+                    <td class="ng-binding">1030</td>
+                    <td class="ng-binding">110</td>
+                    <td class="ng-binding">95</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">19th Oct</td>
+                    <td class="ng-binding">1045</td>
+                    <td class="ng-binding">162</td>
+                    <td class="ng-binding">93</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">20th Oct</td>
+                    <td class="ng-binding">1114</td>
+                    <td class="ng-binding">202</td>
+                    <td class="ng-binding">136</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">21st Oct</td>
+                    <td class="ng-binding">1180</td>
+                    <td class="ng-binding">139</td>
+                    <td class="ng-binding">135</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">22nd Oct</td>
+                    <td class="ng-binding">1184</td>
+                    <td class="ng-binding">95</td>
+                    <td class="ng-binding">95</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">23rd Oct</td>
+                    <td class="ng-binding">1184</td>
+                    <td class="ng-binding">84</td>
+                    <td class="ng-binding">88</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">24th Oct</td>
+                    <td class="ng-binding">1180</td>
+                    <td class="ng-binding">69</td>
+                    <td class="ng-binding">88</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">25th Oct</td>
+                    <td class="ng-binding">1161</td>
+                    <td class="ng-binding">99</td>
+                    <td class="ng-binding">105</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">26th Oct</td>
+                    <td class="ng-binding">1155</td>
+                    <td class="ng-binding">109</td>
+                    <td class="ng-binding">127</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">27th Oct</td>
+                    <td class="ng-binding">1137</td>
+                    <td class="ng-binding">134</td>
+                    <td class="ng-binding">173</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">28th Oct</td>
+                    <td class="ng-binding">1098</td>
+                    <td class="ng-binding">74</td>
+                    <td class="ng-binding">195</td>
+                  </tr><!-- end ngRepeat: o in vm.result --><tr ng-repeat="o in vm.result" class="ng-scope">
+                    <td class="ng-binding text-left">29th Oct</td>
+                    <td class="ng-binding">977</td>
+                    <td class="ng-binding">1</td>
+                    <td class="ng-binding">0</td>
+                  </tr><!-- end ngRepeat: o in vm.result -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+
+        <script type="text/javascript">
+
+            $(function () {
+              $('#sandbox-container .input-daterange').datepicker({ });
+            })
+        </script>
+        <script type="text/javascript">
+            $('#datepicker').datepicker();
+        </script>
+    </body>
+</html>

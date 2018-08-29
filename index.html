@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Drivefly</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+            integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+            crossorigin="anonymous">
+
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="main.css" >
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+        crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+        crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <!-- styled nav by thais -->
+            <!-- <input type="hidden" id="hdn_service" value="0">
+            <input type="hidden" id="hdn_airport" value="0">
+            <input type="hidden" id="hdn_agent" value="0">
+            <input type="hidden" id="hdn_period" value="0">  -->
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm px-sm-0">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-plane"></i><b> rishi2</b></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse justify-content-between" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item mx-2 active">
+                    <a class="nav-link" href="#/home">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/daily">Daily</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/stats">Stats</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/levels">Levels</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/monthly">Monthly</a>
+                  </li>
+                  <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="#">Daily without terminal</a>
+                      <a class="dropdown-item" href="#">Price scanner</a>
+                      <a class="dropdown-item" href="#">Price</a>
+                      <a class="dropdown-item" href="#">Products</a>
+                      <a class="dropdown-item" href="#">Duplicate bookings</a>
+                      <a class="dropdown-item" href="#">Extra payments</a>
+                      <a class="dropdown-item" href="#">Alerts</a>
+                      <a class="dropdown-item" href="#">Logs</a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="d-inline-flex">
+                    <form class="form-inline my-2 my-lg-0 mx-2">
+                        <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search">
+                          <div class="input-group-append"> 
+                              <button class="btn btn-outline-secondary" type="submit">Search</button> 
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-sign-out-alt"></i></a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- end styled nav by thais -->
+        <div class="container-fluid">
+            <!-- Spinner needs to be defined
+            <div id="spinner" class="none">
+                <div class="loader"></div>
+            </div> 
+            -->
+            <div class="row py-3">
+                <div class="col-xs-6 col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-start">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> ALL
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> MG
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> PR
+                      </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-center">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> ALL
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> LHR
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> BHX
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> LTN
+                      </label>
+                      <label class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                        <input type="radio" name="options" id="option3" autocomplete="off" class="px-5"> &nbsp;
+                      </label>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">All</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Drivefly</a>
+                          <a class="dropdown-item" href="#">ICPR</a>
+                          <a class="dropdown-item" href="#">Skypark</a>
+                          <a class="dropdown-item" href="#">CHR</a>
+                          <a class="dropdown-item" href="#">L4P</a>
+                          <a class="dropdown-item" href="#">EX</a>
+                          <a class="dropdown-item" href="#">APH</a>
+                          <a class="dropdown-item" href="#">P-P</a>
+                          <a class="dropdown-item" href="#">SPF</a>
+                          <a class="dropdown-item" href="#">HD</a>
+                          <a class="dropdown-item" href="#">FHR</a>
+                          <a class="dropdown-item" href="#">UKPF</a>
+                          <a class="dropdown-item" href="#">NEW</a>
+                          <a class="dropdown-item" href="#">A2B</a>
+                          <a class="dropdown-item" href="#">P&amp;</a>
+                          <a class="dropdown-item" href="#">Hilton</a>
+                          <a class="dropdown-item" href="#">Ibis</a>
+                          <a class="dropdown-item" href="#">P&amp;M</a>
+                          <a class="dropdown-item" href="#">WOW</a>
+                          <a class="dropdown-item" href="#">Groupon</a>
+                          <a class="dropdown-item" href="#">ILAP</a>
+                          <a class="dropdown-item" href="#">ILMAG</a>
+                          <a class="dropdown-item" href="#">TT</a>
+                          <a class="dropdown-item" href="#">Sky Parking Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-end">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-secondary dropdown-toggle"data-toggle="dropdown">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> Latest
+                        </label>
+                        <div class="dropdown-menu" id="dd">
+                          <a class="dropdown-item" href="#">Today</a>
+                          <a class="dropdown-item" href="#">Tomorrow</a>
+                          <a class="dropdown-item" href="#">Today &amp; Tomorrow</a>
+                          <a class="dropdown-item" href="#">Xtra Payments Due</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid pb-2 bg-light">
+            <div class="row mx-0 py-3 text-muted border-bottom">
+                <div class="col">
+                    When
+                </div>
+                <div class="col">
+                    Agent
+                </div>
+                <div class="col medium-column">
+                    Name
+                </div>
+                <div class="col">
+                    Airport
+                </div>
+                <div class="col small-column">
+                    Type
+                </div>
+                <div class="col">
+                    Ref
+                </div>
+                <div class="col">
+                    Arrival
+                </div>
+                <div class="col">
+                    Departure
+                </div>
+                <div class="col">
+                    Reg
+                </div>
+                <div class="col">
+                    Status
+                </div>
+                <div class="col small-column">
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 bg-white">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">CHR</span>
+                    <span class="badge badge-primary">D</span>
+                </div>
+                <div class="col medium-column">
+                    Mr Jerome Nelson
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Birmingham</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">F8HX4T</span>
+                </div>
+                <div class="col">
+                    <span class="span-tooltip text-success" data-toggle="tooltip" data-placement="top" title="9:30">
+                      14 Aug
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="21:30">
+                      22 Aug
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="Kia Sportage">
+                      GV64NYG
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-success">OK</span>
+                </div>
+                <div class="col small-column">
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 alert-warning text-dark">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">DriveFly</span>
+                    <span class="badge badge-primary">D</span>
+                </div>
+                <div class="col medium-column">
+                    Diego Novick
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Heathrow</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">DDFH737773</span>
+                </div>
+                <div class="col">
+                    <span class="text-warning">15 Aug</span>
+                </div>
+                <div class="col">
+                    21 Aug
+                </div>
+                <div class="col">
+                    LN18 NHZ
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-warning">Pending</span>
+                </div>
+                <div class="col small-column">
+                    <span class="text-secondary"><i class="fas fa-piggy-bank"></i></span>
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 alert-secondary">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">CHR</span>
+                    <span class="badge badge-primary">D</span>
+                </div>
+                <div class="col medium-column">
+                    Mrs Catherine Jamieson
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Birmingham</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">69CHJH</span>
+                </div>
+                <div class="col">
+                    05 Aug
+                </div>
+                <div class="col">
+                    12 Aug
+                </div>
+                <div class="col">
+                    KS64OOX
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-success">Amended</span>
+                </div>
+                <div class="col small-column">
+                    <span class="text-secondary"><i class="fas fa-tag"></i></span>
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 bg-white">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">EX</span>
+                    <span class="badge badge-primary">LTC1</span>
+                </div>
+                <div class="col medium-column">
+                    Mr D Long
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Luton</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">DVP07</span>
+                </div>
+                <div class="col">
+                    30 Nov
+                </div>
+                <div class="col">
+                    03 Dec
+                </div>
+                <div class="col">
+                    LM18LBN
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-success">OK</span>
+                </div>
+                <div class="col small-column">
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 bg-white">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">CHR</span>
+                    <span class="badge badge-primary">D</span>
+                </div>
+                <div class="col medium-column">
+                    Mr Jerome Nelson
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Birmingham</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">F8HX4T</span>
+                </div>
+                <div class="col text-success">
+                    14 Aug
+                </div>
+                <div class="col">
+                    22 Aug
+                </div>
+                <div class="col">
+                    GV64NYG
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-success">OK</span>
+                </div>
+                <div class="col small-column">
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 alert-warning text-dark">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">DriveFly</span>
+                    <span class="badge badge-primary">D</span>
+                </div>
+                <div class="col medium-column">
+                    Andrew Short
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Heathrow</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">DDFH706320</span>
+                </div>
+                <div class="col">
+                    23 Jun
+                </div>
+                <div class="col">
+                    27 Jun
+                </div>
+                <div class="col">
+                    WU17 WC0
+                </div>
+                <div class="col">
+                    <small><i class="fas fa-flag text-danger"></i></small> <span class="badge badge-pill badge-warning">Cancelled</span>
+                </div>
+                <div class="col small-column">
+                    <span class="text-secondary"><i class="fas fa-piggy-bank"></i> <i class="fas fa-tag"></i></span>
+                </div>
+            </div>
+
+            <div class="row mx-0 my-2 py-2 bg-white">
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="14 Aug 16:50">
+                      an hour ago
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">CHR</span>
+                    <span class="badge badge-primary">D</span>
+                </div>
+                <div class="col medium-column">
+                    Mr Jerome Nelson
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">Birmingham</span>
+                </div>
+                <div class="col small-column">
+                    <span class="badge badge-secondary">MG</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">F8HX4T</span>
+                </div>
+                <div class="col">
+                    <span class="span-tooltip text-success" data-toggle="tooltip" data-placement="top" title="9:30">
+                      14 Aug
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="21:30">
+                      22 Aug
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="span-tooltip" data-toggle="tooltip" data-placement="top" title="Kia Sportage">
+                      GV64NYG
+                    </span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-success">OK</span>
+                </div>
+                <div class="col small-column">
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+    </body>
+</html>

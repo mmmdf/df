@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Drivefly</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+            integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+            crossorigin="anonymous">
+
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css" >
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" >
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+        crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+    </head>
+    <body>
+        <!-- styled nav by thais -->
+            <!-- <input type="hidden" id="hdn_service" value="0">
+            <input type="hidden" id="hdn_airport" value="0">
+            <input type="hidden" id="hdn_agent" value="0">
+            <input type="hidden" id="hdn_period" value="0">  -->
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm px-sm-0">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-plane"></i><b> rishi2</b></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse justify-content-between" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item mx-2 active">
+                    <a class="nav-link" href="#/home">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/daily">Daily</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/stats">Stats</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/levels">Levels</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#/monthly">Monthly</a>
+                  </li>
+                  <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="#">Daily without terminal</a>
+                      <a class="dropdown-item" href="#">Price scanner</a>
+                      <a class="dropdown-item" href="#">Price</a>
+                      <a class="dropdown-item" href="#">Products</a>
+                      <a class="dropdown-item" href="#">Duplicate bookings</a>
+                      <a class="dropdown-item" href="#">Extra payments</a>
+                      <a class="dropdown-item" href="#">Alerts</a>
+                      <a class="dropdown-item" href="#">Logs</a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="d-inline-flex">
+                    <form class="form-inline my-2 my-lg-0 mx-2">
+                        <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search">
+                          <div class="input-group-append"> 
+                              <button class="btn btn-outline-secondary" type="submit">Search</button> 
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-sign-out-alt"></i></a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- end styled nav by thais -->
+        <div class="container-fluid">
+            <!-- Spinner needs to be defined
+            <div id="spinner" class="none">
+                <div class="loader"></div>
+            </div> 
+            -->
+            <div class="row pt-3 pb-1">
+                <div class="col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-start">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> ALL
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> MG
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> PR
+                      </label>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 pb-2 pb-sm-0 d-flex justify-content-md-center">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> ALL
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> LHR
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> BHX
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> LTN
+                      </label>
+                    </div>
+                </div>
+
+               
+
+                <div class="col-sm-4 pb-sm-0 d-flex justify-content-md-end">
+                      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                          <input type="radio" name="options" id="option1" autocomplete="off"> 2016
+                        </label>
+                        <label class="btn btn-secondary active">
+                          <input type="radio" name="options" id="option2" autocomplete="off" checked> 2017
+                        </label>
+                        <label class="btn btn-secondary">
+                          <input type="radio" name="options" id="option3" autocomplete="off"> 2018
+                        </label>
+                      </div>
+                </div>
+            </div>
+            <div class="row pb-3">
+              <div class="offset-md-8 col-sm-4 d-flex justify-content-md-end">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option1" autocomplete="off"> Jan
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Feb
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Mar
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option4" autocomplete="off"> Apr
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm active">
+                    <input type="radio" name="options" id="option5" autocomplete="off" checked> May
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option6" autocomplete="off"> Jun
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option7" autocomplete="off"> Jul
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option8" autocomplete="off"> Aug
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option9" autocomplete="off"> Sep
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option10" autocomplete="off"> Oct
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option11" autocomplete="off"> Nov
+                  </label>
+                  <label class="btn btn-outline-secondary btn-sm">
+                    <input type="radio" name="options" id="option12" autocomplete="off"> Dec
+                  </label>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container-fluid p-2 bg-light">
+          <div class="row">
+            <div class="col py-3">
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 54.51%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">16515 picks</div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 45.49%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">picks 13781 drops</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col pb-2">
+              <button type="button" class="btn btn-primary">Show/Hide Products</button>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="col-md-8 pb-5">
+              <table class="table table-drivefly borderless ng-scope text-center">
+
+                <tbody><tr class="active" aaaaaaaa-ng-click="vm.simpleView = !vm.simpleView">
+                  <th class="products-aname">Agent</th>
+                  <th class="products-pname">Product</th>
+                  <th class="products-count">Bookings</th>
+                  <th class="products-perbooking">Per Booking</th>
+                  <th class="products-accuracy text-center">Accuracy</th>
+                  <th class="products-est text-right">Estimate Net</th>
+                  
+                  
+                </tr>
+          </tbody></table><!-- end ngIf: vm.simpleView -->      
+
+
+                <!-- ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">DriveFly</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D </span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          321
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 89.21
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 28635.77</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">DriveFly</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T </span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          80
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 76.34
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 6106.85</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            DriveFly
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            401
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 86.64
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 80 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 34742.62</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">FHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR NF  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          114
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 69.98
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 7977.88</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">FHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR S  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          12
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 87.98
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 1055.72</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">FHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          2
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 99.75
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 199.49</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            FHR
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            128
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 72.13
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 9233.09</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">APH</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          68
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 88.05
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 5987.56</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">APH</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR S  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          36
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 89.54
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 3223.47</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">APH</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T5  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          3
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 56.22
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 168.67</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            APH
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            107
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 87.66
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 9379.7</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">SKYP</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR R  33.78%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          393
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 66.97
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 26317.3</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">SKYP</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR K  40%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          73
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 70.41
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 5139.74</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">SKYP</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR S  34.2%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          477
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 72.44
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 34553.29</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">SKYP</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  32.2%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          93
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 78.10
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 7263.24</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            SKYP
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            1036
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 70.73
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 73273.57</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">L4P</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T  33.1%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          272
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 78.01
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 21220.02</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">L4P</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  35%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          95
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 79.58
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 7560</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">L4P</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR S  35%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          32
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 76.14
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 2436.52</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">L4P</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T4  33.1%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          2
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 44.16
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 88.31</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            L4P
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            401
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 78.07
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 32 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 31304.85</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">NEW</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T </span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          2
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ NaN
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ </span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            NEW
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            2
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 0.00
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 0</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">UKPF</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR 1326  36%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          8
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 36.17
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 289.38</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">UKPF</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  36%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          26
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 72.15
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 1875.8</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">UKPF</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR S  36%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          9
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 69.05
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 621.43</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            UKPF
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            43
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 64.80
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 2786.61</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">P and G</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          1
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ NaN
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ </span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">P and G</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          5
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ NaN
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ </span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            P and G
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            6
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 0.00
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 83 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 0</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">CHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR Park Up 33%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          1161
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 63.81
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 74079.69</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">CHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR MGG  35%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          59
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 55.43
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 3270.1</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">CHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR MGGx </span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          2
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 30.00
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 60</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">CHR</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR RG  35%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          10
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 39.66
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 396.58</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            CHR
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            1232
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 63.15
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 77806.37</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR NF  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          1025
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 76.51
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 78419.92</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR LHRZ17  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          805
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 46.86
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 37723.58</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR LHE8  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          192
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 82.74
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 15886.64</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR LHA9  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          313
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 80.27
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 25124.01</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR LHV9  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          124
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 85.62
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 10617.13</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR LHA8  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          69
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 86.56
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 5972.68</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR LHRZ18  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          13
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 43.88
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 570.5</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">EX</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          1
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 38.50
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 38.5</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            EX
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            2542
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 68.59
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 174352.96</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">SPF</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR E  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          125
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 62.32
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 7790.29</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">SPF</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          5
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 68.95
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 344.74</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            SPF
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            130
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 62.58
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 8135.03</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">TT</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR S  30%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          5
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 80.92
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 404.6</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            TT
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            5
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 80.92
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 404.6</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o --><!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">
+                <!-- ngRepeat: a in o.products --><tbody ng-repeat="a in o.products" ng-show="vm.showProducts" class="ng-scope ng-hide" style="">
+                    <!-- ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">ILMAG</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR D  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          96
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 24.95
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 100 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 2395.47</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">ILMAG</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR T  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          2
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 73.84
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 147.68</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a --><tr class="products ng-scope" ng-repeat="p in a">
+
+                        <td class="products-aname ng-binding">ILMAG</td>
+                        <td class="products-pname">
+                        <!-- ngIf: p.name != 'none' --><span ng-if="p.name != 'none'" class="ng-binding ng-scope"> LHR TRANSFER  25%</span><!-- end ngIf: p.name != 'none' -->
+                        </td>
+                        <td class="products-count ng-binding">
+                          5
+                        </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 28.54
+                        </td>
+                        <td class="products-accuracy">
+                        <span ng-hide="p.auto == 0 || o.name == 'HD'" class="ng-binding"> 20 %</span>
+                        </td>
+                        <td class="products-est">
+                          <span class="ng-binding">£ 142.7</span>
+                        </td>
+
+
+                    </tr><!-- end ngRepeat: p in a -->
+                </tbody><!-- end ngRepeat: a in o.products -->
+
+
+                      <tbody><tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            ILMAG
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            103
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 26.08
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding"> 94 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span class="ng-binding">£ 2685.85</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o -->
+
+                
+      <!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">          
+     <tbody><tr style="font-size: 20px; font-weight: bold;">
+        <td></td>
+        <td></td>
+        <td class="ng-binding">6136</td>
+        <td class="ng-binding"><span style="font-size:14px;">per booking</span> £ 69.12</td>
+        <td class="text-right ng-binding">£ 424105.25</td>
+    </tr>                
+                
+          </tbody></table><!-- end ngIf: vm.simpleView -->
+              </table>
+            </div>
+            <div class="col-md-4 bg-white mt-2">
+              <div class="row">
+                <div class="col">
+                  <p class="text-center p-2">Number of Bookings</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <script type="text/javascript" src="js/plotlyjs-bundle.js"></script>
+                  <script type="text/javascript" src="js/figure2.js"></script>
+                  
+                  <div id="89e8cb4e-bc5d-45c2-9447-3320d969492d" class="plotly-graph-div"></div>
+                  <script type="text/javascript">
+                      (function(){
+                          window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                          var gd = document.getElementById('89e8cb4e-bc5d-45c2-9447-3320d969492d')
+                          var resizeDebounce = null;
+
+                          function resizePlot() {
+                              var bb = gd.getBoundingClientRect();
+                              Plotly.relayout(gd, {
+                                  width: bb.width,
+                                  height: bb.height
+                              });
+                          }
+
+                          
+                          window.addEventListener('resize', function() {
+                              if (resizeDebounce) {
+                                  window.clearTimeout(resizeDebounce);
+                              }
+                              resizeDebounce = window.setTimeout(resizePlot, 100);
+                          });
+                          
+
+                          
+                          Plotly.plot(gd,  {
+                              data: figure.data,
+                              layout: figure.layout,
+                              frames: figure.frames,
+                              config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": false}
+                          });
+                          
+                     }());
+                  </script>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <script type="text/javascript" src="js/figure3.js"></script>
+        
+                  <div id="35673599-4c90-4644-8dc7-134db9ec6c91" style="width: 100%;" class="plotly-graph-div"></div>
+                  <script type="text/javascript">
+                      (function(){
+                          window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                          var gd = document.getElementById('35673599-4c90-4644-8dc7-134db9ec6c91')
+                          var resizeDebounce = null;
+
+                          function resizePlot() {
+                              var bb = gd.getBoundingClientRect();
+                              Plotly.relayout(gd, {
+                                  width: bb.width,
+                                  height: bb.height
+                              });
+                          }
+
+                          
+                          window.addEventListener('resize', function() {
+                              if (resizeDebounce) {
+                                  window.clearTimeout(resizeDebounce);
+                              }
+                              resizeDebounce = window.setTimeout(resizePlot, 100);
+                          });
+                          
+
+                          
+                          Plotly.plot(gd,  {
+                              data: figure.data,
+                              layout: figure.layout,
+                              frames: figure.frames,
+                              config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": false}
+                          });
+                          
+                     }());
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+
+        <script type="text/javascript">
+
+            $(function () {
+              $('#sandbox-container .input-daterange').datepicker({ });
+            })
+        </script>
+        <script type="text/javascript">
+            $('#datepicker').datepicker();
+        </script>
+    </body>
+</html>
