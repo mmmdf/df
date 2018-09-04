@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Drivefly</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+            integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+            crossorigin="anonymous">
+
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css" >
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" >
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+        crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+    </head>
+    <body>
+        <!-- styled nav by thais -->
+            <!-- <input type="hidden" id="hdn_service" value="0">
+            <input type="hidden" id="hdn_airport" value="0">
+            <input type="hidden" id="hdn_agent" value="0">
+            <input type="hidden" id="hdn_period" value="0">  -->
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm px-sm-0">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-plane"></i><b> rishi2</b></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse justify-content-between" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="daily.html">Daily</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="stats.html">Stats</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="levels.html">Levels</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="monthly.html">Monthly</a>
+                  </li>
+                  <li class="nav-item dropdown mx-2 active">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="daily-without-terminal">Daily without terminal</a>
+                      <a class="dropdown-item" href="price.html">Price</a>
+                      <a class="dropdown-item" href="products.html">Products</a>
+                      <a class="dropdown-item" href="xpayments.html">Extra payments</a>
+                      <a class="dropdown-item" href="alerts.html">Alerts</a>
+                      <a class="dropdown-item" href="log.html">Logs</a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="d-inline-flex">
+                    <form class="form-inline my-2 my-lg-0 mx-2">
+                        <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search">
+                          <div class="input-group-append"> 
+                              <button class="btn btn-outline-secondary" type="submit">Search</button> 
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-sign-out-alt"></i></a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- end styled nav by thais -->
+        <div class="container-fluid pb-2 bg-light">
+          <div class="row py-3">
+            <div class="col-md-3">
+  
+              <div class="panel panel-default p-2 bg-white">
+                <div class="panel-heading">Companies</div>
+                <div class="panel-body">
+          
+                  <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- ngRepeat: (k,c) in vm.companies --><tr ng-repeat="(k,c) in vm.companies" ng-click="vm.selectedCompany = c.pc_id" ng-class="{ 'success':vm.selectedCompany == c.pc_id }" class="ng-scope success" style="">
+                        <td class="ng-binding">Drivefly</td>
+                      </tr><!-- end ngRepeat: (k,c) in vm.companies --><tr ng-repeat="(k,c) in vm.companies" ng-click="vm.selectedCompany = c.pc_id" ng-class="{ 'success':vm.selectedCompany == c.pc_id }" class="ng-scope">
+                        <td class="ng-binding">ICPR</td>
+                      </tr><!-- end ngRepeat: (k,c) in vm.companies --><tr ng-repeat="(k,c) in vm.companies" ng-click="vm.selectedCompany = c.pc_id" ng-class="{ 'success':vm.selectedCompany == c.pc_id }" class="ng-scope">
+                        <td class="ng-binding"></td>
+                      </tr><!-- end ngRepeat: (k,c) in vm.companies -->
+                    </tbody>
+                  </table>
+          
+          
+          
+                </div>
+              </div>
+          
+            </div>
+  
+  
+            <div class="col-md-9">
+          
+              <div class="panel panel-default  p-2 bg-white">
+                <div class="panel-heading">Products</div>
+                <div class="panel-body">
+          
+                  <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Airport</th>
+                        <th>Type</th>
+                        <th>Show on DriveFly.co.uk</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope success" style="">
+                        <td class="ng-binding">Drivefly</td>
+                        <td class="ng-binding">BHX</td>
+                        <td class="ng-binding">MG</td>
+                        <td class="">
+                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
+                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
+                        </td>
+                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope">
+                        <td class="ng-binding">Drivefly</td>
+                        <td class="ng-binding">LHR</td>
+                        <td class="ng-binding">MG</td>
+                        <td class="">
+                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
+                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
+                        </td>
+                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope">
+                        <td class="ng-binding">Drivefly</td>
+                        <td class="ng-binding">LTN</td>
+                        <td class="ng-binding">MG</td>
+                        <td class="">
+                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
+                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
+                        </td>
+                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope">
+                        <td class="ng-binding">Drivefly</td>
+                        <td class="ng-binding">LHR</td>
+                        <td class="ng-binding">PR</td>
+                        <td class="">
+                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
+                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
+                        </td>
+                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list -->
+                    </tbody>
+                  </table>
+          
+          
+          
+                </div>
+              </div>
+          
+            </div>
+          
+          
+          </div>
+
+
+
+
+
+  <div class="row sticky ng-isolate-scope" style="height: 80px; display: block;" sticky-class="sticky-on" sticky="">
+    <div class="col-md-12 d-flex justify-content-end">
+
+      <button type="button" ng-click="vm.admin_product_save_changes()" ng-show="vm.sp.product_id" class="btn btn-warning" style="">Save changes</button>
+
+    </div>
+  </div>
+
+        <script type="text/javascript">
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+
+        <script type="text/javascript">
+
+            $(function () {
+              $('#sandbox-container .input-daterange').datepicker({ });
+            })
+        </script>
+        <script type="text/javascript">
+            $('#datepicker').datepicker();
+        </script>
+    </body>
+</html>
