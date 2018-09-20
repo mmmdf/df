@@ -165,7 +165,7 @@
             </div>
         </div>
         <div class="container-fluid pb-2 bg-light">
-            <div class="row mx-0 py-3 text-muted border-bottom" id="daily-rows">
+            <div class="row mx-0 py-3 text-muted border-bottom" id="daily-rows" data-toggle="modal" data-target="#exampleModalCenter">
                 <div class="col-md-6">
                   <div class="row mx-0 pb-2 text-muted border-bottom">
                     <div class="col-md-6">
@@ -175,6 +175,191 @@
                       <a href="api/print/pdf.slip.php?date=2018-08-27&amp;airport=0&amp;type=" target="_blank" class="btn btn-primary btn-sm pull-right mr-2">Print</a> <a href="api/print/pdf.slip.returns.php?date=2018-08-27&amp;airport=0&amp;type=&amp;in=1" target="_blank" class="btn btn-primary btn-sm">List</a>
                     </div>
                   </div>
+                  <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <div class="col-md-8 p-0">
+                          <h5 class="modal-title">
+                            Christopher Pullen | 07942679346
+                          </h5>
+                        </div>
+                        <div class="col-md-4 p-0 d-flex justify-content-end">
+                          <h5>Ref:  <span class="badge badge-secondary">DDFH750652</span></h5>
+                        </div>
+                      </div>
+                      <div class="modal-body " bs-tabs="" data-bs-active-pane="vm.activeTab">
+                        <ul class="nav nav-tabs">
+                          <li class="nav-item"><a class="nav-link active">Booking details</a></li>
+                          <li class="nav-item"><a class="nav-link">Amendments</a></li>
+                          <li class="nav-item"><a class="nav-link ">Photos</a></li>
+                          <li class="nav-item"><a class="nav-link ">Payments</a></li>
+                        </ul>
+                        <div class="tab-content">
+ 
+                          <div title="Booking details" class="tab-pane am-fade active">
+                          <form name="vm.myForm" class="">
+
+                           <div class="row pt-2">
+
+                               <div class="col-md-3">
+                                      <div class="smallLabel pb-1">Flying from</div>  
+                                      <span class="badge badge-secondary p-2">Heathrow</span>
+                                          <span tooltip="Edit name" class="glyphicon glyphicon-edit  pull-right pointer" aria-hidden="true"></span>
+                                      
+                               </div>
+                               <div class="col-md-6">
+                                      <div class="smallLabel">Leaving on</div>    
+                                      
+                                      <div class="input-group date pr-2">
+                                        <input type="text" class="form-control" id="datepicker" placeholder="dd/mm/yyyy">
+                                      </div>
+                                  
+                               </div>
+                               <div class="col-md-3">
+                                      <div class="smallLabel text-white">.</div>  
+                                      <input bs-timepicker="" data-time-format="HH:mm" data-time-type="string" name="timeStart" type="text" class="form-control text-center" value="" required="required" pattern="" title="" placeholder="hh:mm">
+                               
+                               
+                               </div>
+
+                           </div>
+                           <div class="row">
+
+                               <div class="col-md-3">
+                                      <div class="smallLabel pb-1">Type</div>
+                                      <span class=""> 
+                                        <span class="badge badge-info p-2" >Meet &amp; Greet</span>
+                                          <span tooltip="Edit" class="glyphicon glyphicon-edit  pull-right pointer" aria-hidden="true"></span>
+                                      </span>
+                               </div>
+                               <div class="col-md-6">
+                                      <div class="smallLabel">Returning on</div>   
+                                      
+                                       <div class="input-group date pr-2">
+                                        <input type="text" class="form-control" id="datepicker" placeholder="dd/mm/yyyy">
+                                      </div>
+                                  
+                               </div>
+                               <div class="col-md-3">
+                                      <div class="smallLabel text-white">.</div>  
+                                      <input bs-timepicker="" data-time-format="HH:mm" data-time-type="string" type="text" class="form-control text-center" value="" required="required" pattern="" title="" placeholder="hh:mm">
+                               </div>
+
+                           </div>
+
+                          <div class="dropdown-divider"></div>
+
+                           <div class="row">
+
+                               <div class="col-md-4">
+
+                                      <div class="smallLabel">Car Make and Model</div>  
+                                      <input maxlength="25" type="text" name="carModel" class="form-control" value="" pattern="" title="">
+                               </div>
+                               <div class="col-md-4">
+
+                                      <div class="smallLabel">Car Colour</div>  
+                                      <input maxlength="12" type="text" name="carColor" class="form-control" value="" pattern="" title="">
+                               </div>
+                               <div class="col-md-4">
+
+                                      <div class="smallLabel">Reg Number</div>  
+                                      <input maxlength="10" type="text" name="carReg" class="form-control text-center" value="" pattern="" title="">
+                               </div>
+
+
+                           </div>
+
+                           <div class="dropdown-divider"></div>
+
+                           <div class="row">
+
+                               <div class="col-md-4">
+
+                                      <div class="smallLabel">Returning Flight Number</div>  
+                                      <input maxlength="10" type="text" name="flightEnd" class="form-control text-center " auto-complete="" source-root="acFlights1" select-on-click="" autocomplete="off">
+                                              
+                               </div>
+
+                               <div class="col-md-4">
+                                      <div class="smallLabel">Terminal In</div>  
+                             
+                                      <input bs-typeahead="" bs-options="ter for ter in vm.terminals" data-animation="am-flip-x" data-placement="auto" data-min-length="0" data-limit="7" maxlength="11" type="text" name="terminalEnd" class="form-control text-center" value="" pattern="" title="" autocomplete="off">
+                               </div>
+
+                               <div class="col-md-4">
+                                      <div class="smallLabel">Terminal Out</div> 
+                                      
+                                      <input bs-typeahead="" bs-options="ter for ter in vm.terminals" data-animation="am-flip-x" data-placement="auto" data-min-length="0" data-limit="7" maxlength="11" type="text" name="terminalStart" class="form-control text-center" value="" pattern="" title="" autocomplete="off">
+                               </div>
+
+
+                           </div>
+
+                          <div class="dropdown-divider"></div>
+
+                           <div class="row">
+
+                               <div class="col-md-4">
+                                  
+                                   <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="smallLabel">Amount:</div>
+                                        <div><span class="badge badge-secondary text-lg  p-1">£ 54.80</span></div>
+                                        <div><span class="badge badge-secondary text-lg  p-1">£ 68.50</span></div>
+                                        <div><span class="badge badge-info  p-1">save 20</span></div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="smallLabel">Via:</div>
+                                        <span class="badge badge-warning">DriveFly</span>
+                                        <span class="badge badge-info p-1">D</span>
+                                      </div>
+                                   </div>
+                                   <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                      <button type="button" class="cancel btn btn-danger mx-0 mt-3">Cancel booking</button>               
+                                    </div>
+                                   </div>     
+                               </div>
+
+                               <div class="col-md-8">
+                                      <textarea maxlength="255" rows="5" name="comments" class="form-control"></textarea>
+                                      
+                                      <div class="smallLabel ">Admin: super admin</div>
+
+                               </div>
+
+
+                           </div>
+                           <div class="dropdown-divider"></div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                <span>Status: <span class="badge badge-success  p-2">OK</span></span>
+                              </div>
+                              <div class="col-md-6 text-right">
+                                <small>Created:  05 Sep 10:46</small> | <small>Updated: 05 Sep 10:46</small>
+                              </div>
+                           </div>        
+
+
+                          </form>
+
+                          </div>
+                        </div>
+                              </div>
+                                <div class="modal-footer">
+                                  <a target="_blank" class="btn btn-outline-secondary">Print</a>
+                                  <a target="_self" class="btn btn-default"><span style="font-size: 20px;" class="text-secondary" aria-hidden="true"><i class="fas fa-2x fa-plus-circle"></i></span></a>
+                                  <button type="button" class="btn btn-secondary">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                </div>
+
+                <!-- End Modal -->
                   <!-- item -->
                   <div class="row mx-0 my-2 py-2 bg-white">
                     <div class="col-md-3">
