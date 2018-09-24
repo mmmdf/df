@@ -219,7 +219,7 @@
 
         <div class="row">
           <div class="col-md-12 pb-5">
-              <table class="table table-drivefly borderless text-center">
+              <table class="table table-drivefly borderless ng-scope text-center">
 
                 <tbody>
                   <tr class="active">
@@ -234,30 +234,281 @@
 
                 <tr class="total-products">
 
-                          <td>
+                          <td class="agent-aname ng-binding">
                             DriveFly
                           </td>
-                          <td >-</td>
-                          <td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
                             401
                           </td>
-                        <td>
+                        <td class="products-perbooking ng-binding">
                           £ 86.64
                         </td>
-                          <td>
-                          <span> 80 %</span>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 80 %</span>
                           </td>
-                          <td>
+                          <td class="agent-est">
                             <span>£ 34742.62</span>
                           </td>
 
 
                       </tr>
-                      
-                </tbody></table>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            FHR
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            128
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 72.13
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 9233.09</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            APH
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            107
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 87.66
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 9379.7</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            SKYP
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            1036
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 70.73
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 73273.57</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            L4P
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            401
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 78.07
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 32 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 31304.85</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            NEW
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            2
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 0.00
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'" class="ng-binding ng-hide"> 0 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 0</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            UKPF
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            43
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 64.80
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 2786.61</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            P and G
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            6
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 0.00
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 83 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 0</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            CHR
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            1232
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 63.15
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 77806.37</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            EX
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            2542
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 68.59
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 174352.96</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            SPF
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            130
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 62.58
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 8135.03</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            TT
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            5
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 80.92
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 100 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 404.6</span>
+                          </td>
+
+
+                      </tr>
+                      <tr class="total-products" ng-click="vm.showProducts = !vm.showProducts" style="cursor:pointer;">
+
+                          <td class="agent-aname ng-binding">
+                            ILMAG
+                          </td>
+                          <td class="agent-pname">-</td>
+                          <td class="agent-count ng-binding">
+                            103
+                          </td>
+                        <td class="products-perbooking ng-binding">
+                          £ 26.08
+                        </td>
+                          <td class="agent-accuracy">
+                          <span ng-hide="o.auto == 0 || o.name == 'HD'"> 94 %</span>
+                          </td>
+                          <td class="agent-est">
+                            <span>£ 2685.85</span>
+                          </td>
+
+
+                      </tr>
+                </tbody></table><!-- end ngIf: vm.simpleView --><!-- end ngRepeat: o in vm.o -->
 
                 
-   <table class="table table-drivefly borderless text-center">          
+      <!-- ngIf: vm.simpleView --><table class="table table-drivefly borderless ng-scope text-center">          
      <tbody><tr style="font-size: 20px; font-weight: bold;">
         <td></td>
         <td></td>
@@ -266,7 +517,7 @@
         <td>£ 424105.25</td>
     </tr>                
                 
-          </tbody></table>
+          </tbody></table><!-- end ngIf: vm.simpleView -->
               </table>
             </div>
             <div class="col-md-12 bg-white mt-2">

@@ -87,7 +87,7 @@
                     </form>
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                        <a class="nav-link" href="/add.html"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
@@ -165,7 +165,7 @@
             </div>
         </div>
         <div class="container-fluid pb-2 bg-light">
-            <div class="row mx-0 py-3 text-muted border-bottom" id="daily-rows" data-toggle="modal" data-target="#exampleModalCenter">
+            <div class="row mx-0 py-3 text-muted border-bottom" id="daily-rows">
                 <div class="col-md-6">
                   <div class="row mx-0 pb-2 text-muted border-bottom">
                     <div class="col-md-6">
@@ -175,7 +175,19 @@
                       <a href="api/print/pdf.slip.php?date=2018-08-27&amp;airport=0&amp;type=" target="_blank" class="btn btn-primary btn-sm pull-right mr-2">Print</a> <a href="api/print/pdf.slip.returns.php?date=2018-08-27&amp;airport=0&amp;type=&amp;in=1" target="_blank" class="btn btn-primary btn-sm">List</a>
                     </div>
                   </div>
-                  <!-- Modal -->
+                  
+                  <!-- item -->
+                  <div class="row mx-0 my-2 py-2 bg-white" data-toggle="modal" data-target="#exampleModalCenter">
+                    <div class="col-md-3">
+                      <span class="badge badge-success">L4P-1-1892702</span>
+                    </div>
+                    <div class="col-md-2">02:00</div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4">Kerry Robinson</div>
+                    <div class="col-md-2 d-flex justify-content-end">
+                      <span class="badge badge-warning">KR10XNE</span>
+                    </div>
+                    <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -360,21 +372,10 @@
                 </div>
 
                 <!-- End Modal -->
-                  <!-- item -->
-                  <div class="row mx-0 my-2 py-2 bg-white">
-                    <div class="col-md-3">
-                      <span class="badge badge-success">L4P-1-1892702</span>
-                    </div>
-                    <div class="col-md-2">02:00</div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">Kerry Robinson</div>
-                    <div class="col-md-2 d-flex justify-content-end">
-                      <span class="badge badge-warning">KR10XNE</span>
-                    </div>
                   </div>
                   <!-- /item -->
                   <!-- item -->
-                  <div class="row mx-0 my-2 py-2 bg-white">
+                  <div class="row mx-0 my-2 py-2 bg-white" data-toggle="modal" data-target="#exampleModalCenter">
                     <div class="col-md-3">
                       <span class="badge badge-success">ZFH1ES</span>
                     </div>

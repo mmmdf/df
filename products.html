@@ -91,7 +91,7 @@
                     </form>
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                        <a class="nav-link" href="/add.html"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
@@ -120,13 +120,15 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- ngRepeat: (k,c) in vm.companies --><tr ng-repeat="(k,c) in vm.companies" ng-click="vm.selectedCompany = c.pc_id" ng-class="{ 'success':vm.selectedCompany == c.pc_id }" class="ng-scope success" style="">
-                        <td class="ng-binding">Drivefly</td>
-                      </tr><!-- end ngRepeat: (k,c) in vm.companies --><tr ng-repeat="(k,c) in vm.companies" ng-click="vm.selectedCompany = c.pc_id" ng-class="{ 'success':vm.selectedCompany == c.pc_id }" class="ng-scope">
-                        <td class="ng-binding">ICPR</td>
-                      </tr><!-- end ngRepeat: (k,c) in vm.companies --><tr ng-repeat="(k,c) in vm.companies" ng-click="vm.selectedCompany = c.pc_id" ng-class="{ 'success':vm.selectedCompany == c.pc_id }" class="ng-scope">
-                        <td class="ng-binding"></td>
-                      </tr><!-- end ngRepeat: (k,c) in vm.companies -->
+                      <tr class="success">
+                        <td>Drivefly</td>
+                      </tr>
+                      <tr>
+                        <td>ICPR</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                      </tr>
                     </tbody>
                   </table>
           
@@ -140,7 +142,7 @@
   
             <div class="col-md-9">
           
-              <div class="panel panel-default  p-2 bg-white">
+              <div class="panel panel-default p-2 bg-white">
                 <div class="panel-heading">Products</div>
                 <div class="panel-body">
           
@@ -154,39 +156,15 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope success" style="">
-                        <td class="ng-binding">Drivefly</td>
-                        <td class="ng-binding">BHX</td>
-                        <td class="ng-binding">MG</td>
-                        <td class="">
-                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
-                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
+                      <tr class="success">
+                        <td>Drivefly</td>
+                        <td>BHX</td>
+                        <td >MG</td>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-success">On</button>
+                          <button type="button" class="btn btn-sm btn-default">Off</button>
                         </td>
-                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope">
-                        <td class="ng-binding">Drivefly</td>
-                        <td class="ng-binding">LHR</td>
-                        <td class="ng-binding">MG</td>
-                        <td class="">
-                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
-                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
-                        </td>
-                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope">
-                        <td class="ng-binding">Drivefly</td>
-                        <td class="ng-binding">LTN</td>
-                        <td class="ng-binding">MG</td>
-                        <td class="">
-                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
-                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
-                        </td>
-                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list --><tr ng-repeat="id in vm.companies[vm.selectedCompany].list" ng-click="vm.sp = vm.products[id]" ng-class="{ 'success':vm.sp.product_id == id }" class="ng-scope">
-                        <td class="ng-binding">Drivefly</td>
-                        <td class="ng-binding">LHR</td>
-                        <td class="ng-binding">PR</td>
-                        <td class="">
-                          <button ng-show="vm.products[id].site_id" type="button" class="btn btn-sm btn-success" ng-click="vm.OnOffProduct({'product_id':id,'onoff':0})">On</button>
-                          <button ng-hide="vm.products[id].site_id" type="button" class="btn btn-sm btn-default ng-hide" ng-click="vm.OnOffProduct({'product_id':id,'onoff':1})">Off</button>
-                        </td>
-                      </tr><!-- end ngRepeat: id in vm.companies[vm.selectedCompany].list -->
+                      </tr>
                     </tbody>
                   </table>
           
@@ -204,10 +182,10 @@
 
 
 
-  <div class="row sticky ng-isolate-scope" style="height: 80px; display: block;" sticky-class="sticky-on" sticky="">
+  <div class="row sticky" style="height: 80px; display: block;" sticky-class="sticky-on" sticky="">
     <div class="col-md-12 d-flex justify-content-end">
 
-      <button type="button" ng-click="vm.admin_product_save_changes()" ng-show="vm.sp.product_id" class="btn btn-warning" style="">Save changes</button>
+      <button type="button" class="btn btn-warning" >Save changes</button>
 
     </div>
   </div>

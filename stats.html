@@ -39,6 +39,55 @@
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
 
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+          // Load the Visualization API and the corechart package.
+          google.charts.load('current', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['DriveFly', 'FHR', 'APH', 'SKYP', 'L4P',
+               'P and G', 'CHR', 'EX', 'UKPF', 'SPF', 'ICPR', 'TT', 'ILMAG', 'SPS', 'S4P', { role: 'annotation' } ],
+              ['10th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['11th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['12th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['13th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['14th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['15th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['16th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['17th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['18th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['19th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['20th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['21st Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['22nd Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['23rd Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['24th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, '']
+            ]);
+
+            var options = {
+              width: '100%',
+              height: 600,
+              legend: { position: 'top', maxLines: 3 },
+              isStacked: true,
+            };
+
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+          }
+        </script>
+
     </head>
     <body>
         <!-- styled nav by thais -->
@@ -91,7 +140,7 @@
                     </form>
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                        <a class="nav-link" href="/add.html"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-cog"></i></a>
@@ -208,738 +257,99 @@
         <div class="container-fluid pb-2 bg-light">
           <div class="row">
             <div class="col py-3">
-              <!-- element copied from current website -->
-              <div class="graph ng-scope bg-white">
-<nvd3 options="vm.nvd3Options" data="vm.chartData" class="ng-isolate-scope"><svg height="450px" width="100%" class="nvd3-svg" style="height: 450px; width: 100%;"><g class="nvd3 nv-wrap nv-multiBarWithLegend" transform="translate(55,20)"><g><g class="nv-x nv-axis nvd3-svg" transform="translate(0,390)"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick zero" transform="translate(48.62582778930664,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">9th Aug</text></g><g class="tick" transform="translate(137.0364227294922,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">10th Aug</text></g><g class="tick" transform="translate(225.447021484375,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">11th Aug</text></g><g class="tick" transform="translate(313.85760498046875,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">12th Aug</text></g><g class="tick" transform="translate(402.2682189941406,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">13th Aug</text></g><g class="tick" transform="translate(490.6788024902344,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">14th Aug</text></g><g class="tick" transform="translate(579.0894165039062,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">15th Aug</text></g><g class="tick" transform="translate(667.5,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">16th Aug</text></g><g class="tick" transform="translate(755.9105834960938,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">17th Aug</text></g><g class="tick" transform="translate(844.3211669921875,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">18th Aug</text></g><g class="tick" transform="translate(932.7318115234375,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">19th Aug</text></g><g class="tick" transform="translate(1021.1423950195312,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">20th Aug</text></g><g class="tick" transform="translate(1109.552978515625,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">21st Aug</text></g><g class="tick" transform="translate(1197.963623046875,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 1;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 1;" x="0">22nd Aug</text></g><g class="tick" transform="translate(1286.3741455078125,0)" style="opacity: 1;"><line y2="-390" x2="0" style="opacity: 0;"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle; opacity: 0;" x="0">23rd Aug</text></g><path class="domain" d="M0,0V0H1335V0"></path><text class="nv-axislabel" text-anchor="middle" y="36" x="667.5" style="opacity: 1;">Days</text></g></g></g><g class="nv-y nv-axis nvd3-svg"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick zero" transform="translate(0,390)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="0" style="text-anchor: end;" y="0">0</text></g><g class="tick" transform="translate(0,335.9833679199219)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">100</text></g><g class="tick" transform="translate(0,281.9667663574219)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">200</text></g><g class="tick" transform="translate(0,227.95013427734375)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">300</text></g><g class="tick" transform="translate(0,173.9335174560547)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">400</text></g><g class="tick" transform="translate(0,119.91690063476562)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">500</text></g><g class="tick" transform="translate(0,65.90027618408203)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">600</text></g><g class="tick" transform="translate(0,11.88365650177002)" style="opacity: 1;"><line x2="1335" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">700</text></g><path class="domain" d="M0,0H0V390H0"></path><text class="nv-axislabel" transform="rotate(-90)" y="-50" x="-195" style="text-anchor: middle;">Count</text></g><g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMin-y" transform="translate(0,390)"><text dy=".32em" y="0" x="-3" text-anchor="end" style="opacity: 1;">0</text></g><g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMax-y" transform="translate(0,0)"><text dy=".32em" y="0" x="-3" text-anchor="end" style="opacity: 1;">722</text></g></g></g><g class="nv-barsWrap nvd3-svg"><g class="nvd3 nv-wrap nv-multibar" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-2274"><rect width="1335" height="390"></rect></clipPath></defs><g clip-path="url(#nv-edge-clip-2274)"><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"><rect class="nv-bar positive" x="0" y="374.3351800554017" height="15.664819944598321" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="382.4376731301939" height="7.5623268698061" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="385.6786703601108" height="4.3213296398892" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="378.6565096952908" height="11.343490304709178" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="374.8753462603878" height="15.1246537396122" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="382.97783933518" height="7.022160664819978" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="360.83102493074796" height="29.168975069252042" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="371.6343490304709" height="18.3656509695291" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="377.5761772853185" height="12.423822714681478" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="377.0360110803324" height="12.9639889196676" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="380.2770083102493" height="9.7229916897507" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="374.3351800554017" height="15.664819944598321" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="377.5761772853185" height="12.423822714681478" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="363.5318559556787" height="26.46814404432132" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect><rect class="nv-bar positive" x="0" y="382.4376731301939" height="7.5623268698061" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(82, 186, 225); stroke: rgb(82, 186, 225);"></rect></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"><rect class="nv-bar positive" x="0" y="366.2326869806094" height="8.102493074792278" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="373.7950138504155" height="8.6426592797784" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="379.196675900277" height="6.4819944598338" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="369.47368421052636" height="9.182825484764464" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="362.4515235457064" height="12.423822714681421" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="374.3351800554017" height="8.642659279778343" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="353.808864265928" height="7.022160664819978" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="361.91135734072026" height="9.722991689750643" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="368.393351800554" height="9.182825484764521" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="372.1745152354571" height="4.861495844875321" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="374.8753462603878" height="5.4016620498615" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="362.4515235457064" height="11.8836565096953" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="369.47368421052636" height="8.102493074792164" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="351.6481994459834" height="11.8836565096953" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect><rect class="nv-bar positive" x="0" y="380.8171745152355" height="1.6204986149584215" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(18, 194, 100); stroke: rgb(18, 194, 100);"></rect></g><g class="nv-group nv-series-2" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"><rect class="nv-bar positive" x="0" y="346.786703601108" height="19.4459833795014" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="356.50969529085876" height="17.285318559556742" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="369.47368421052636" height="9.722991689750643" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="345.7063711911357" height="23.767313019390656" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="339.22437673130196" height="23.22714681440442" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="346.2465373961219" height="28.0886426592798" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="337.0637119113573" height="16.745152354570678" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="341.3850415512465" height="20.526315789473756" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="351.1080332409972" height="17.2853185595568" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="354.3490304709141" height="17.825484764542978" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="347.3268698060942" height="27.54847645429362" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="337.0637119113573" height="25.387811634349077" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="347.86703601108036" height="21.606648199446" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="332.7423822714681" height="18.905817174515278" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect><rect class="nv-bar positive" x="0" y="374.3351800554017" height="6.4819944598338" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(154, 82, 2); stroke: rgb(154, 82, 2);"></rect></g><g class="nv-group nv-series-3" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"><rect class="nv-bar positive" x="0" y="293.85041551246536" height="52.93628808864264" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="322.4792243767313" height="34.03047091412748" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="343.005540166205" height="26.468144044321377" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="302.49307479224376" height="43.21329639889194" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="285.20775623268696" height="54.016620498615" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="300.8725761772853" height="45.3739612188366" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="284.66759002770084" height="52.39612188365646" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="298.71191135734074" height="42.67313019390576" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="313.29639889196676" height="37.81163434903044" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="315.99722991689754" height="38.35180055401656" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="290.60941828254846" height="56.71745152354572" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="269.54293628808864" height="67.52077562326866" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="298.17174515235456" height="49.6952908587258" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="277.64542936288086" height="55.09695290858724" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect><rect class="nv-bar positive" x="0" y="355.9695290858726" height="18.3656509695291" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(246, 171, 47); stroke: rgb(246, 171, 47);"></rect></g><g class="nv-group nv-series-4" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"><rect class="nv-bar positive" x="0" y="235.51246537396122" height="58.33795013850414" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="257.11911357340716" height="65.36011080332412" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="298.17174515235456" height="44.83379501385042" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="243.07479224376732" height="59.41828254847644" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="214.44598337950137" height="70.76177285318559" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="252.25761772853184" height="48.61495844875344" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="228.4903047091413" height="56.17728531855954" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="243.61495844875344" height="55.0969529085873" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="276.02493074792244" height="37.27146814404432" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="273.32409972299166" height="42.67313019390588" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="241.99445983379505" height="48.61495844875341" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="213.90581717451522" height="55.63711911357342" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="239.29362880886427" height="58.87811634349029" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="237.1329639889197" height="40.51246537396116" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect><rect class="nv-bar positive" x="0" y="338.1440443213296" height="17.825484764542978" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(139, 92, 157); stroke: rgb(139, 92, 157);"></rect></g><g class="nv-group nv-series-5" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"><rect class="nv-bar positive" x="0" y="234.43213296398892" height="1.0803324099723" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="257.11911357340716" height="0" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="297.0914127423823" height="1.0803324099722431" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="242.53462603878114" height="0.5401662049861784" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="210.66481994459832" height="3.78116343490305" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="249.55678670360112" height="2.7008310249307215" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="227.40997229916897" height="1.0803324099723284" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="242.53462603878114" height="1.0803324099723" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="273.32409972299166" height="2.7008310249307783" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="272.78393351800554" height="0.5401662049861216" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="239.83379501385042" height="2.1606648199446283" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="212.2853185595568" height="1.6204986149584215" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="237.6731301939058" height="1.6204986149584784" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="235.51246537396122" height="1.6204986149584784" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect><rect class="nv-bar positive" x="0" y="337.60387811634354" height="0.5401662049860647" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(254, 179, 56); stroke: rgb(254, 179, 56);"></rect></g><g class="nv-group nv-series-6" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"><rect class="nv-bar positive" x="0" y="162.59002770083103" height="71.84210526315789" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="190.13850415512465" height="66.98060941828251" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="249.01662049861497" height="48.07479224376735" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="136.12188365650968" height="106.41274238227146" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="118.29639889196676" height="92.36842105263156" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="172.31301939058173" height="77.24376731301939" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="162.04986149584488" height="65.36011080332409" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="159.88919667590028" height="82.64542936288086" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="220.387811634349" height="52.93628808864267" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="226.86980609418282" height="45.91412742382272" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="175.55401662049863" height="64.27977839335179" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="107.49307479224377" height="104.79224376731302" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="143.14404432132966" height="94.52908587257613" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="156.1080332409972" height="79.40443213296402" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect><rect class="nv-bar positive" x="0" y="306.2742382271468" height="31.329639889196756" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(243, 87, 156); stroke: rgb(243, 87, 156);"></rect></g><g class="nv-group nv-series-7" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"><rect class="nv-bar positive" x="0" y="82.10526315789473" height="80.4847645429363" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="124.77839335180057" height="65.36011080332408" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="192.29916897506922" height="56.71745152354575" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="58.878116343490305" height="77.24376731301938" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="16.204986149584506" height="102.09141274238226" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="84.26592797783935" height="88.04709141274238" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="81.56509695290859" height="80.48476454293629" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="65.36011080332408" height="94.5290858725762" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="159.88919667590028" height="60.49861495844871" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="163.67036011080333" height="63.19944598337949" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="93.98891966759004" height="81.56509695290859" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="12.423822714681451" height="95.06925207756233" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="51.85595567867034" height="91.28808864265932" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="61.57894736842107" height="94.52908587257613" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect><rect class="nv-bar positive" x="0" y="267.38227146814404" height="38.89196675900274" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(153, 51, 204); stroke: rgb(153, 51, 204);"></rect></g><g class="nv-group nv-series-8" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"><rect class="nv-bar positive" x="0" y="79.94459833795015" height="2.1606648199445715" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="124.23822714681438" height="0.5401662049861926" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="189.05817174515238" height="3.240997229916843" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="57.79778393351802" height="1.0803324099722857" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="11.883656509695307" height="4.3213296398892" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="78.86426592797783" height="5.401662049861528" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="78.86426592797783" height="2.700831024930764" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="62.65927977839336" height="2.7008310249307144" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="158.26869806094183" height="1.62049861495845" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="157.72853185595568" height="5.94182825484765" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="89.66759002770084" height="4.3213296398892" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="8.642659279778398" height="3.7811634349030534" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="49.69529085872576" height="2.1606648199445786" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="61.57894736842107" height="0" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect><rect class="nv-bar positive" x="0" y="266.8421052631579" height="0.5401662049861216" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(146, 243, 240); stroke: rgb(146, 243, 240);"></rect></g><g class="nv-group nv-series-9" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"><rect class="nv-bar positive" x="0" y="75.62326869806095" height="4.3213296398892" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="120.45706371191137" height="3.781163434903007" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="187.4376731301939" height="1.6204986149584784" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="54.01662049861496" height="3.781163434903057" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="8.102493074792253" height="3.7811634349030534" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="75.62326869806095" height="3.2409972299168714" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="73.46260387811634" height="5.401662049861486" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="59.41828254847645" height="3.240997229916914" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="155.02770083102493" height="3.2409972299169" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="150.16620498614958" height="7.5623268698061" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="85.34626038781164" height="4.3213296398892" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="4.321329639889199" height="4.321329639889199" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="46.454293628808855" height="3.240997229916907" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="54.556786703601105" height="7.022160664819964" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect><rect class="nv-bar positive" x="0" y="266.30193905817174" height="0.5401662049861784" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(255, 111, 24); stroke: rgb(255, 111, 24);"></rect></g><g class="nv-group nv-series-10" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"><rect class="nv-bar positive" x="0" y="75.08310249307482" height="0.5401662049861358" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="117.75623268698061" height="2.700831024930764" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="186.3573407202216" height="1.0803324099723" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="52.39612188365653" height="1.6204986149584357" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="5.401662049861487" height="2.700831024930766" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="72.38227146814404" height="3.240997229916914" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="71.30193905817175" height="2.1606648199445857" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="57.79778393351802" height="1.6204986149584286" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="151.786703601108" height="3.2409972299169283" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="150.16620498614958" height="0" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="81.56509695290859" height="3.78116343490305" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="2.7008310249307654" height="1.6204986149584335" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="45.37396121883656" height="1.0803324099722929" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="51.85595567867034" height="2.700831024930764" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="265.22160664819944" height="1.0803324099723" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect></g><g class="nv-group nv-series-11" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"><rect class="nv-bar positive" x="0" y="74.00277008310248" height="1.0803324099723426" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="113.43490304709141" height="4.3213296398892" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="185.81717451523545" height="0.54016620498615" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="51.3157894736842" height="1.0803324099723284" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="3.2409972299169096" height="2.1606648199445777" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="71.30193905817175" height="1.0803324099722857" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="69.68144044321328" height="1.6204986149584784" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="54.556786703601105" height="3.240997229916914" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="150.16620498614958" height="1.6204986149584215" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="149.62603878116343" height="0.54016620498615" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="80.4847645429363" height="1.0803324099722857" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="0" height="2.7008310249307654" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="44.29362880886428" height="1.0803324099722857" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="51.3157894736842" height="0.5401662049861429" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="265.22160664819944" height="0" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect></g><g class="nv-group nv-series-12" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"><rect class="nv-bar positive" x="0" y="71.8421052631579" height="2.1606648199445715" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="112.35457063711912" height="1.0803324099722857" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="183.65650969529085" height="2.1606648199446" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="48.074792243767334" height="3.2409972299168643" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="0.5401662049861444" height="2.700831024930765" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="71.30193905817175" height="0" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="69.14127423822714" height="0.5401662049861358" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="53.47645429362882" height="1.0803324099722857" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="150.16620498614958" height="0" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="149.62603878116343" height="0" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="79.404432132964" height="1.0803324099723" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="0" height="0" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="44.29362880886428" height="0" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="49.69529085872576" height="1.6204986149584357" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="265.22160664819944" height="0" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect></g><g class="nv-group nv-series-13" style="stroke-opacity: 1; fill-opacity: 0.75; fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"><rect class="nv-bar positive" x="0" y="70.22160664819943" height="1.6204986149584784" width="79.56953642384106" transform="translate(8.841059602649008,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="110.73407202216065" height="1.6204986149584784" width="79.56953642384106" transform="translate(97.25165562913908,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="181.49584487534625" height="2.1606648199446" width="79.56953642384106" transform="translate(185.66225165562915,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="48.074792243767334" height="0" width="79.56953642384106" transform="translate(274.07284768211923,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="0.5401662049861444" height="0" width="79.56953642384106" transform="translate(362.4834437086093,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="71.30193905817175" height="0" width="79.56953642384106" transform="translate(450.89403973509934,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="69.14127423822714" height="0" width="79.56953642384106" transform="translate(539.3046357615895,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="53.47645429362882" height="0" width="79.56953642384106" transform="translate(627.7152317880794,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="149.62603878116343" height="0.54016620498615" width="79.56953642384106" transform="translate(716.1258278145696,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="149.62603878116343" height="0" width="79.56953642384106" transform="translate(804.5364238410597,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="78.32409972299168" height="1.0803324099723284" width="79.56953642384106" transform="translate(892.9470198675497,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="0" height="0" width="79.56953642384106" transform="translate(981.3576158940398,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="44.29362880886428" height="0" width="79.56953642384106" transform="translate(1069.76821192053,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="49.15512465373962" height="0.5401662049861429" width="79.56953642384106" transform="translate(1158.17880794702,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect><rect class="nv-bar positive" x="0" y="265.22160664819944" height="0" width="79.56953642384106" transform="translate(1246.58940397351,0)" style="fill: rgb(184, 190, 193); stroke: rgb(184, 190, 193);"></rect></g></g></g></g></g><g class="nv-legendWrap nvd3-svg" transform="translate(180,-20)"><g class="nvd3 nv-legend" transform="translate(0,5)"><g transform="translate(314.240234375,5)"><g class="nv-series" transform="translate(0,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(82, 186, 225); fill-opacity: 1; stroke: rgb(82, 186, 225);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">DriveFly</text></g><g class="nv-series" transform="translate(75.998046875,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(18, 194, 100); fill-opacity: 1; stroke: rgb(18, 194, 100);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">FHR</text></g><g class="nv-series" transform="translate(132.66015625,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(154, 82, 2); fill-opacity: 1; stroke: rgb(154, 82, 2);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">APH</text></g><g class="nv-series" transform="translate(189.333984375,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(246, 171, 47); fill-opacity: 1; stroke: rgb(246, 171, 47);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">SKYP</text></g><g class="nv-series" transform="translate(253.349609375,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(139, 92, 157); fill-opacity: 1; stroke: rgb(139, 92, 157);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">L4P</text></g><g class="nv-series" transform="translate(306.701171875,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(254, 179, 56); fill-opacity: 1; stroke: rgb(254, 179, 56);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">P and G</text></g><g class="nv-series" transform="translate(382.728515625,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(243, 87, 156); fill-opacity: 1; stroke: rgb(243, 87, 156);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">CHR</text></g><g class="nv-series" transform="translate(440.7265625,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(153, 51, 204); fill-opacity: 1; stroke: rgb(153, 51, 204);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">EX</text></g><g class="nv-series" transform="translate(488.734375,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(146, 243, 240); fill-opacity: 1; stroke: rgb(146, 243, 240);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">SPF</text></g><g class="nv-series" transform="translate(544.072265625,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(255, 111, 24); fill-opacity: 1; stroke: rgb(255, 111, 24);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">ICPR</text></g><g class="nv-series" transform="translate(604.7421875,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(184, 190, 193); fill-opacity: 1; stroke: rgb(184, 190, 193);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">ILMAG</text></g><g class="nv-series" transform="translate(674.083984375,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(184, 190, 193); fill-opacity: 1; stroke: rgb(184, 190, 193);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">UKPF</text></g><g class="nv-series" transform="translate(738.087890625,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(184, 190, 193); fill-opacity: 1; stroke: rgb(184, 190, 193);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">TT</text></g><g class="nv-series" transform="translate(784.748046875,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(184, 190, 193); fill-opacity: 1; stroke: rgb(184, 190, 193);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">SPS</text></g></g></g></g><g class="nv-controlsWrap nvd3-svg" transform="translate(0,-20)"><g class="nvd3 nv-legend" transform="translate(0,5)"><g transform="translate(25.94140625,5)"><g class="nv-series" transform="translate(0,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(68, 68, 68); fill-opacity: 0; stroke: rgb(68, 68, 68);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">Grouped</text></g><g class="nv-series" transform="translate(78.69921875,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(68, 68, 68); fill-opacity: 1; stroke: rgb(68, 68, 68);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">Stacked</text></g></g></g></g><g class="nv-interactive"></g></g></g></svg></nvd3>
-</div>
-</div>
-</div>
+                <div id="chart_div"></div>
+            </div>
+          </div>
 
-<div class="row">
-  <div class="col pb-5">
-              <table class="table table-drivefly borderless ng-scope text-center">
-                  
+          <div class="row">
+            <div class="col pb-5">
+              <table class="table table-drivefly borderless text-center">
                   <tbody><tr>
                       <th>Name</th>
-                      <!-- ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 9th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 10th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 11th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 12th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 13th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 14th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 15th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 16th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 17th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 18th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 19th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 20th Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 21st Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 22nd Aug</th><!-- end ngRepeat: d in vm.dates --><th ng-repeat="d in vm.dates" class="ng-binding ng-scope"> 23rd Aug</th><!-- end ngRepeat: d in vm.dates -->
+                      <th> 9th Aug</th>
+                      <th> 10th Aug</th>
+                      <th> 11th Aug</th>
+                      <th> 12th Aug</th>
+                      <th> 13th Aug</th>
+                      <th> 14th Aug</th>
+                      <th> 15th Aug</th>
+                      <th> 16th Aug</th>
+                      <th> 17th Aug</th>
+                      <th> 18th Aug</th>
+                      <th> 19th Aug</th>
+                      <th> 20th Aug</th>
+                      <th> 21st Aug</th>
+                      <th> 22nd Aug</th>
+                      <th> 23rd Aug</th>
                   </tr>
                   
                   
-                  <!-- ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope" style="">
+                  <tr>
                       
-                      <td class="ng-binding">DriveFly</td>
+                      <td>DriveFly</td>
                       
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      <td>
                                   
                                   29
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   14
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   21
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   28
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   13
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   54
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   34
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   23
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   24
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   18
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   29
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   23
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   49
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
+                      </td>
+                      <td>
                                   
                                   14
-                      </td><!-- end ngRepeat: d in vm.dates -->
+                      </td>
                       
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">FHR</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  15
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  16
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  12
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  17
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  23
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  16
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  13
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  18
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  17
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  9
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  10
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  22
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  15
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  22
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">APH</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  36
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  32
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  18
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  44
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  43
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  52
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  31
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  38
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  32
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  33
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  51
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  47
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  40
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  35
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  12
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">SKYP</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  98
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  63
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  49
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  80
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  100
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  84
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  97
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  79
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  70
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  71
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  105
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  125
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  92
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  102
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  34
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">L4P</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  108
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  121
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  83
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  110
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  131
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  90
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  104
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  102
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  69
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  79
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  90
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  103
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  109
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  75
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  33
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">P and G</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  7
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">CHR</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  133
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  124
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  89
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  197
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  171
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  143
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  121
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  153
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  98
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  85
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  119
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  194
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  175
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  147
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  58
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">EX</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  149
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  121
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  105
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  143
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  189
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  163
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  149
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  175
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  112
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  117
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  151
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  176
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  169
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  175
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  72
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">SPF</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  10
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  11
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  7
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">ICPR</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  7
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  7
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  7
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  10
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  14
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  13
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">ILMAG</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  7
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">UKPF</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  8
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">TT</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  6
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  5
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result --><tr ng-repeat="(name, v) in vm.result" class="ng-scope">
-                      
-                      <td class="ng-binding">SPS</td>
-                      
-                      <!-- ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  3
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  4
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  2
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  1
-                      </td><!-- end ngRepeat: d in vm.dates --><td ng-repeat="d in vm.dates" class="ng-binding ng-scope">
-                                  
-                                  
-                      </td><!-- end ngRepeat: d in vm.dates -->
-                      
-                  </tr><!-- end ngRepeat: (name, v) in vm.result -->
+                  </tr>
                   
                   
               </tbody></table>
