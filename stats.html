@@ -44,7 +44,7 @@
         <script type="text/javascript">
 
           // Load the Visualization API and the corechart package.
-          google.charts.load('current', {'packages':['corechart']});
+          google.charts.load('current', {'packages':['bar']});
 
           // Set a callback to run when the Google Visualization API is loaded.
           google.charts.setOnLoadCallback(drawChart);
@@ -55,35 +55,80 @@
           function drawChart() {
 
             var data = google.visualization.arrayToDataTable([
-              ['DriveFly', 'FHR', 'APH', 'SKYP', 'L4P',
+              ['Days', 'DriveFly', 'FHR', 'APH', 'SKYP', 'L4P',
                'P and G', 'CHR', 'EX', 'UKPF', 'SPF', 'ICPR', 'TT', 'ILMAG', 'SPS', 'S4P', { role: 'annotation' } ],
-              ['10th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['11th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['12th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['13th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['14th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['15th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['16th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['17th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['18th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['19th Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['20th Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['21st Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['22nd Sep', 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['23rd Sep', 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
-              ['24th Sep', 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, '']
+              ['10th Sep', 21, 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['11th Sep', 43, 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['12th Sep', 54, 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['13th Sep', 76, 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['14th Sep', 90, 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['15th Sep', 12, 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['16th Sep', 20, 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['17th Sep', 34, 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['18th Sep', 56, 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['19th Sep', 89, 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['20th Sep', 10, 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['21st Sep', 23, 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['22nd Sep', 65, 10, 24, 20, 32, 18, 5, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['23rd Sep', 45, 16, 22, 23, 30, 16, 9, 10, 24, 20, 32, 18, 5, 32, 18, ''],
+              ['24th Sep', 98, 28, 19, 29, 30, 12, 13, 10, 24, 20, 32, 18, 5, 32, 18, '']
             ]);
 
             var options = {
+              isStacked: true,
               width: '100%',
               height: 600,
-              legend: { position: 'top', maxLines: 3 },
-              isStacked: true,
+              hAxis: {
+                title: 'Days',
+              },
+              vAxis: {
+                title: 'Count'
+              },
+              series: {
+                  0: {
+                      color: 'rgb(82, 186, 225)'
+                  },
+                  1: {
+                      color: 'rgb(18, 194, 100)'
+                  },
+                  2: {
+                      color: 'rgb(154, 82, 2)'
+                  },
+                  3: {
+                      color: 'rgb(246, 171, 47)'
+                  },
+                  4: {
+                      color: 'rgb(139, 92, 157)'
+                  },
+                  5: {
+                      color: 'rgb(184, 190, 193)'
+                  },
+                  6: {
+                      color: 'rgb(254, 179, 56)'
+                  },
+                  7: {
+                      color: 'rgb(243, 87, 156)'
+                  },
+                  8: {
+                      color: 'rgb(153, 51, 204)'
+                  },
+                  9: {
+                      color: 'rgb(255, 111, 24)'
+                  },
+                  10: {
+                      color: 'rgb(184, 190, 193)'
+                  },
+                  11: {
+                      color: 'rgb(184, 190, 193)'
+                  },
+                  12: {
+                      color: 'rgb(184, 190, 193)'
+                  }
+              },
             };
 
-
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
+            var chart = new google.charts.Bar(document.getElementById('chart_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
 
           }
         </script>
@@ -257,7 +302,7 @@
         <div class="container-fluid pb-2 bg-light">
           <div class="row">
             <div class="col py-3">
-                <div id="chart_div"></div>
+                <div id="chart_div" class="p-2 bg-white"></div>
             </div>
           </div>
 
