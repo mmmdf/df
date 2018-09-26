@@ -273,88 +273,338 @@
           </div>
           <div class="row">
             <div class="col pb-2">
-              <button type="button" class="btn btn-primary">Show/Hide Products</button>
+              <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Show/Hide Products</button>
             </div>
           </div>
 
-        <div class="row">
-          <div class="col-md-12 pb-5">
-              <table class="table table-drivefly borderless text-center">
+          <div class="row mx-0 py-3 text-muted border-bottom">
+                <div class="col">
+                    Agent
+                </div>
+                <div class="col">
+                    Product
+                </div>
+                <div class="col text-center">
+                    Bookings
+                </div>
+                <div class="col text-center">
+                    Per Booking
+                </div>
+                <div class="col text-center">
+                    Accuracy
+                </div>
+                <div class="col text-right">
+                    Estimate Net
+                </div>
+          </div>
 
-                <tbody>
-                  <tr class="active">
-                  <th class="products-aname">Agent</th>
-                  <th class="products-pname">Product</th>
-                  <th class="products-count">Bookings</th>
-                  <th class="products-perbooking">Per Booking</th>
-                  <th class="products-accuracy text-center">Accuracy</th>
-                  <th class="products-est">Estimate Net</th>
-                  
-                </tr>
-
-                <tr class="total-products">
-
-                          <td>
-                            DriveFly
-                          </td>
-                          <td >-</td>
-                          <td>
-                            401
-                          </td>
-                        <td>
-                          £ 86.64
-                        </td>
-                          <td>
-                          <span> 80 %</span>
-                          </td>
-                          <td>
-                            <span>£ 34742.62</span>
-                          </td>
-
-
-                      </tr>
-                      
-                </tbody></table>
-
-                
-   <table class="table table-drivefly borderless text-center">          
-     <tbody><tr style="font-size: 20px; font-weight: bold;">
-        <td></td>
-        <td></td>
-        <td>6136</td>
-        <td><span style="font-size:14px;">per booking</span> £ 69.12</td>
-        <td>£ 424105.25</td>
-    </tr>                
-                
-          </tbody></table>
-              </table>
-            </div>
-            <div class="col-md-12 bg-white mt-2">
+          <div class="row mx-0 accordion" id="accordionExample">
+            <div class="col-md-12 mb-2 py-2 collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="row">
                 <div class="col">
-                  <div id="piechart" style="width: 100%; height: 800px;"></div>
+                  Drivefly
                 </div>
-                <div class="col d-flex align-items-center">
-                  <div id="columnchart" style="width: 100%; height: 400px;"></div>
+                <div class="col">
+                  LHR D Park&Ride
+                </div>
+                <div class="col text-center">
+                  99
+                </div>
+                <div class="col text-center">
+                  £ 46.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 4742.62
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR D
+                </div>
+                <div class="col text-center">
+                  305
+                </div>
+                <div class="col text-center">
+                  £ 86.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 3742.62
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR T
+                </div>
+                <div class="col text-center">
+                  78
+                </div>
+                <div class="col text-center">
+                  £ 76.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 742.62
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-2 py-2 bg-white">
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  -
+                </div>
+                <div class="col text-center">
+                  401
+                </div>
+                <div class="col text-center">
+                  £ 860.64
+                </div>
+                <div class="col text-center">
+                  80%
+                </div>
+                <div class="col text-right">
+                  £ 34742.62
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="row mx-0 accordion" id="accordionExample">
+            <div class="col-md-12 mb-2 py-2 collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR D Park&Ride
+                </div>
+                <div class="col text-center">
+                  99
+                </div>
+                <div class="col text-center">
+                  £ 46.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 4742.62
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR D
+                </div>
+                <div class="col text-center">
+                  305
+                </div>
+                <div class="col text-center">
+                  £ 86.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 3742.62
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR T
+                </div>
+                <div class="col text-center">
+                  78
+                </div>
+                <div class="col text-center">
+                  £ 76.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 742.62
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-2 py-2 bg-white">
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  -
+                </div>
+                <div class="col text-center">
+                  401
+                </div>
+                <div class="col text-center">
+                  £ 860.64
+                </div>
+                <div class="col text-center">
+                  80%
+                </div>
+                <div class="col text-right">
+                  £ 34742.62
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-0 accordion" id="accordionExample">
+            <div class="col-md-12 mb-2 py-2 collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR D Park&Ride
+                </div>
+                <div class="col text-center">
+                  99
+                </div>
+                <div class="col text-center">
+                  £ 46.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 4742.62
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR D
+                </div>
+                <div class="col text-center">
+                  305
+                </div>
+                <div class="col text-center">
+                  £ 86.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 3742.62
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  LHR T
+                </div>
+                <div class="col text-center">
+                  78
+                </div>
+                <div class="col text-center">
+                  £ 76.64
+                </div>
+                <div class="col text-center">
+                  100%
+                </div>
+                <div class="col text-right">
+                  £ 742.62
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-2 py-2 bg-white">
+              <div class="row">
+                <div class="col">
+                  Drivefly
+                </div>
+                <div class="col">
+                  -
+                </div>
+                <div class="col text-center">
+                  401
+                </div>
+                <div class="col text-center">
+                  £ 860.64
+                </div>
+                <div class="col text-center">
+                  80%
+                </div>
+                <div class="col text-right">
+                  £ 34742.62
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-0 accordion" id="accordionExample">
+            <div class="col-md-12 mb-2 py-2 bg-white">
+              <div class="row" style="font-size: 20px; font-weight: bold;">
+                <div class="col">
+                </div>
+                <div class="col">
+                </div>
+                <div class="col text-center">
+                  6136
+                </div>
+                <div class="col text-center">
+                  <span style="font-size:14px;">per booking</span> £ 69.12</td>
+                </div>
+                <div class="col text-center">
+                </div>
+                <div class="col text-right">
+                  £ 424105.2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 bg-white mt-2">
+            <div class="row">
+              <div class="col">
+                <div id="piechart" style="width: 100%; height: 800px;"></div>
+              </div>
+              <div class="col d-flex align-items-center">
+                <div id="columnchart" style="width: 100%; height: 400px;"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <script type="text/javascript">
-            $(function () {
-              $('[data-toggle="tooltip"]').tooltip()
-            })
-        </script>
+    <script type="text/javascript">
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
-            $(function () {
-              $('#sandbox-container .input-daterange').datepicker({ });
-            })
-        </script>
-        <script type="text/javascript">
-            $('#datepicker').datepicker();
-        </script>
-    </body>
+        $(function () {
+          $('#sandbox-container .input-daterange').datepicker({ });
+        })
+    </script>
+    <script type="text/javascript">
+        $('#datepicker').datepicker();
+    </script>
+  </body>
 </html>
