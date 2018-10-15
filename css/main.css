@@ -77,3 +77,10 @@ padding: 0px;
   opacity: 1;
 }
 /*end modal box from previous site*/
+
+.login-page {
+  background-image:url(../img/login-bg.jpg);
+}
+.login-page .row {
+  height: 100vh;
+}
