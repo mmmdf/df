@@ -84,3 +84,33 @@ padding: 0px;
 .login-page .row {
   height: 100vh;
 }
+
+.products-table {
+   min-width: 180px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    /* margin-left: 34%; */
+    margin-top: 10px;
+    /* font-size: 24px; */
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}

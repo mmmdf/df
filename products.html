@@ -39,6 +39,12 @@
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
 
+        <!-- Include Quill stylesheet -->
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
     </head>
     <body>
         <!-- styled nav by thais -->
@@ -108,58 +114,84 @@
         <div class="container-fluid pb-2 bg-light">
           <div class="row py-3">
             <div class="col-md-3">
-  
-              <div class="panel panel-default p-2 bg-white">
-                <div class="panel-heading">Companies</div>
-                <div class="panel-body">
-          
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="success">
-                        <td>Drivefly</td>
-                      </tr>
-                      <tr>
-                        <td>ICPR</td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-          
-          
-          
+
+              <div class="row mx-0 py-3 text-muted border-bottom">
+                <div class="col">
+                    Companies
+                </div>
+              </div>
+
+              <div class="row mx-0 my-2 py-2 bg-white"  data-toggle="collapse" data-target="#collapseDrivefly" aria-expanded="true" aria-controls="collapseDrivefly">
+                <div class="col">
+                  <span>
+                    Drivefly
+                  </span>
+                </div>
+              </div>
+
+              <div class="row mx-0 my-2 py-2 bg-white  collapsed"  data-toggle="collapse" data-target="#collapseICPR" aria-expanded="false" aria-controls="collapseICPR">
+                <div class="col">
+                  <span>
+                    ICPR
+                  </span>
                 </div>
               </div>
           
             </div>
   
   
-            <div class="col-md-9">
+            <div class="col-md-9" id="accordionProducts">
+
+              <div class="row mx-0 py-3 text-muted border-bottom">
+                <div class="col">
+                    Product
+                </div>
+              </div>
+              
+              <div class="collapse" id="collapseDrivefly" data-parent="#accordionProducts">
+                <div class="panel panel-default p-2 bg-white mt-2">
           
-              <div class="panel panel-default p-2 bg-white">
-                <div class="panel-heading">Products</div>
-                <div class="panel-body">
-          
-                  <table class="table table-striped table-hover">
+                  <table class="table table-striped table-hover table-borderless">
                     <thead>
                       <tr>
-                        <th>Name</th>
+                        <th class="products-table">Name</th>
                         <th>Airport</th>
                         <th>Type</th>
                         <th>Show on DriveFly.co.uk</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="success">
+                      <tr class="success" data-toggle="collapse" data-target="#collapseDriveflyBhxMg" aria-expanded="true" aria-controls="collapseDriveflyBhxMg">
                         <td>Drivefly</td>
                         <td>BHX</td>
-                        <td >MG</td>
+                        <td>MG</td>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-success">On</button>
+                          <button type="button" class="btn btn-sm btn-default">Off</button>
+                        </td>
+                      </tr>
+                      <tr class="success">
+                        <td>Drivefly</td>
+                        <td>LHR</td>
+                        <td>MG</td>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-success">On</button>
+                          <button type="button" class="btn btn-sm btn-default">Off</button>
+                        </td>
+                      </tr>
+                      <tr class="success">
+                        <td>Drivefly</td>
+                        <td>LTN</td>
+                        <td>MG</td>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-success">On</button>
+                          <button type="button" class="btn btn-sm btn-default">Off</button>
+                        </td>
+                      </tr>
+                      <tr class="success">
+                        <td>Drivefly</td>
+                        <td>LHR</td>
+                        <td>PR</td>
                         <td>
                           <button type="button" class="btn btn-sm btn-success">On</button>
                           <button type="button" class="btn btn-sm btn-default">Off</button>
@@ -167,29 +199,217 @@
                       </tr>
                     </tbody>
                   </table>
-          
-          
-          
                 </div>
               </div>
           
+              <div class="collapse" id="collapseICPR" data-parent="#accordionProducts">
+                  <div class="panel panel-default p-2 bg-white mt-2">
+            
+                    <table class="table table-striped table-hover table-borderless">
+                      <thead>
+                        <tr>
+                          <th class="products-table">Name</th>
+                          <th>Airport</th>
+                          <th>Type</th>
+                          <th>Show on DriveFly.co.uk</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="success">
+                          <td>I Can Park & Ride Flex</td>
+                          <td>BHX</td>
+                          <td>PR</td>
+                          <td>
+                            <button type="button" class="btn btn-sm btn-success">On</button>
+                            <button type="button" class="btn btn-sm btn-default">Off</button>
+                          </td>
+                        </tr>
+                        <tr class="success">
+                          <td>I Can Park & Ride Flex</td>
+                          <td>BHX</td>
+                          <td>PR</td>
+                          <td>
+                            <button type="button" class="btn btn-sm btn-success">On</button>
+                            <button type="button" class="btn btn-sm btn-default">Off</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            
+              </div>
+              
             </div>
-          
-          
+            <div class="row sticky" style="height: 80px; display: block;" sticky-class="sticky-on" sticky="">
+              <div class="col-md-12 d-flex justify-content-end">
+
+                <button type="button" class="btn btn-warning" >Save changes</button>
+
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseDriveflyBhxMg" data-parent="#accordionEditor">
+              <div class="row mx-0 py-3 text-muted border-bottom"  id="accordionEditor">
+                <div class="col">
+                    Editor
+                </div>
+              </div>
+              <div class="row mx-0 my-2 py-4 bg-white">
+                <div class="col-3">
+                  <div class="form-group">
+                    <label for="product_name">Product Name</label>
+                    <input type="text" class="form-control" id="product_name" maxlength="50" placeholder="Product Name" >
+                  </div>
+
+                  <hr>
+
+                  <div class="form-group">
+                    <label for="product_name">Product Airport</label>
+                    <select class="form-control">
+                      <option value="LHR">LHR</option>
+                      <option value="BHX" selected="selected">BHX</option>
+                      <option value="LTN">LTN</option>
+                    </select>
+                  </div>
+
+                  <hr>
+                  
+                  <div class="form-group">
+                    <label for="product_name">Product Type</label>
+                    <select class="form-control">
+                      <option value="MG" selected="selected">Meet&amp;Greet</option>
+                      <option value="PR">Park&amp;Ride</option>
+                    </select>
+                  </div>
+
+                  <hr>
+                  
+                  <div class="form-group">
+                    <label for="product_code">Product Code</label>
+                    <input type="text" class="form-control" id="product_code" maxlength="5" placeholder="D">
+                  </div>
+
+                  <hr>
+                  
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="check1">
+                    <label class="form-check-label" for="check1">Product is amendable</label>
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="check2">
+                    <label class="form-check-label" for="check2">Product is refundable</label>
+                  </div>
+
+                  <hr>
+                  <div class="col">
+                    <img alt="" class="" src="https://api.drivefly.org/assets/15.png" style="">
+                  </div>
+                  <button class=" btn btn-primary btn-small">
+                    Upload photo
+                  </button>
+                </div>
+
+                <div class="col-9">
+                  <div class="form-group">
+                    <label for="product_code">Short Description (max length 500)</button></label>
+                    <div class="card bg-light mb-3" id="editor-container2">
+                      <div class="card-body">
+
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-small">save</button>
+                  </div>
+
+                  <hr>
+                  
+                  <div class="form-group">
+                    <label for="product_code">Product info</label>
+                    <div class="card bg-light mb-3" id="editor-container">
+                      <div class="card-body">
+                        <h2 >Accessibility:</h2>
+                        <p>This service is suitable for customers with limited mobility, as a shuttle bus is not required.</p>
+                        <h2>Security:</h2>
+                        <p>The car park is secured by:</p>
+                        <ul>
+                        <li>Security barriers</li>
+                        <li>CCTV</li>
+                        <li>24-hour patrols</li>
+                        </ul>
+                        <h2>The small print:</h2>
+                        <p>Your car will be parked in a secured off-site compound while you're away.</p>
+                        <p>Drivefly is only available to take and return cars between 4am and 12 midnight.</p>
+                        <p>During bank holidays, there may be some changes in how the parking works. Drivefly will tell you about this if it affects you.</p>
+                        <p>All airport fees are included.</p>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-small">save</button>
+                  </div>
+
+                  <hr>
+
+                  <div class="form-group">
+                    <label for="product_code">Product Directions</label>
+                    <div class="card bg-light mb-3" id="editor-container3">
+                      <div class="card-body">
+                        <h4>Telephone your driver: 0121 647 3683 or 07935 209 700</h4>
+                        <p>If you do NOT receive a call, please call us on the above number when you are 15 - 20 minutes away from the terminal so we can arrange a driver for you.</p>
+                        <h4>Departure Procedures sat-nav postcode: B26 3QJ</h4>
+                        <ul>
+                        <li>On arriving at the airport, use the 'Drop &amp; Go' area immediately outside the terminal. Take the ticket from the barrier and immediately turn RIGHT. On the right had side perimeter of the Drop and Go area you will see a number of parking bays. Please park in between bays 9-12.</li>
+                        <li>Here you will be greeted by one of our chauffeurs at the prearranged meeting point, who will have all your booking details.</li>
+                        </ul>
+                        <h4>Return Procedure</h4>
+                        <ul>
+                        <li>Please call us on 0121 647 3683 / 07935 209 700 once you have collected all your luggage. In case of any delays please let us know.</li>
+                        <li>Our chauffer will deliver your vehicle to the agreed pick up point at the airport.</li>
+                        </ul>
+                        <p>*Depending on the product you have paid for; you may be required to pay for the airport exit fee on your return. Please ask our driver for clarification.</p>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-small">save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </body>
 
-
-
-
-
-  <div class="row sticky" style="height: 80px; display: block;" sticky-class="sticky-on" sticky="">
-    <div class="col-md-12 d-flex justify-content-end">
-
-      <button type="button" class="btn btn-warning" >Save changes</button>
-
-    </div>
-  </div>
-
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+          var quill = new Quill('#editor-container2', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+          var quill = new Quill('#editor-container3', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
         <script type="text/javascript">
             $(function () {
               $('[data-toggle="tooltip"]').tooltip()
