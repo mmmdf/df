@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Drivefly</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link 
+            rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+            integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+            crossorigin="anonymous">
+
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css" >
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" >
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+        crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+
+        <!-- Include Quill stylesheet -->
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    </head>
+    <body>
+        <!-- styled nav by thais -->
+            <!-- <input type="hidden" id="hdn_service" value="0">
+            <input type="hidden" id="hdn_airport" value="0">
+            <input type="hidden" id="hdn_agent" value="0">
+            <input type="hidden" id="hdn_period" value="0">  -->
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm px-sm-0">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-plane"></i><b> rishi2</b></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse justify-content-between" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="daily.html">Daily</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="stats.html">Stats</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="levels.html">Levels</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="monthly.html">Monthly</a>
+                  </li>
+                  <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a class="dropdown-item" href="daily-without-terminal.html">Daily without terminal</a>
+                      <a class="dropdown-item" href="price.html">Price</a>
+                      <a class="dropdown-item" href="products.html">Products</a>
+                      <a class="dropdown-item" href="xtrapayments.html">Extra payments</a>
+                      <a class="dropdown-item" href="alerts.html">Alerts</a>
+                      <a class="dropdown-item" href="log.html">Logs</a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="d-inline-flex">
+                    <form class="form-inline my-2 my-lg-0 mx-2">
+                        <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Search">
+                          <div class="input-group-append"> 
+                              <button class="btn btn-outline-secondary" type="submit">Search</button> 
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/add.html"><i class="fa d-inline fa-lg fa-plus-circle"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="settings.html"><i class="fa d-inline fa-lg fa-cog"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-sign-out-alt"></i></a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- end styled nav by thais -->
+
+        
+        <div class="container-fluid p-2 pl-4 py-4 bg-light" style="height: 100vh;">
+          <div class="row">
+            <div class="col-3">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-administration-tab" data-toggle="pill" href="#v-pills-administration" role="tab" aria-controls="v-pills-administration" aria-selected="true">Administration Management</a>
+                <a class="nav-link" id="v-pills-confirmations-tab" data-toggle="pill" href="#v-pills-confirmations" role="tab" aria-controls="v-pills-confirmations" aria-selected="false">Confirmations</a>
+                <a class="nav-link" id="v-pills-printer-tab" data-toggle="pill" href="#v-pills-printer" role="tab" aria-controls="v-pills-printer" aria-selected="false">Printer Settings</a>
+              </div>
+            </div>
+            <div class="col-9">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-administration" role="tabpanel" aria-labelledby="v-pills-administration-tab">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="p-4 bg-white">
+                          <h3 class="mb-4">Manage Users</h2>
+                          <div class="row mb-2">
+                            <div class="col-5">
+                              John Doe
+                            </div>
+                            <div class="col-5">
+                              Admin
+                            </div>
+                            <div class="col-2 d-flex justify-content-md-end">
+                              <a href="api/print/pdf.slip.php?date=2018-08-27&amp;airport=0&amp;type=" target="_blank" class="btn btn-primary btn-sm mr-2">Edit</a> <a href="api/print/pdf.slip.returns.php?date=2018-08-27&amp;airport=0&amp;type=&amp;in=1" target="_blank" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+                          </div>
+                          <div class="row mb-2">
+                            <div class="col-5">
+                              John Doe
+                            </div>
+                            <div class="col-5">
+                              Admin
+                            </div>
+                            <div class="col-2 d-flex justify-content-md-end">
+                              <a href="api/print/pdf.slip.php?date=2018-08-27&amp;airport=0&amp;type=" target="_blank" class="btn btn-primary btn-sm mr-2">Edit</a> <a href="api/print/pdf.slip.returns.php?date=2018-08-27&amp;airport=0&amp;type=&amp;in=1" target="_blank" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+                          </div>
+                          <div class="row mb-2">
+                            <div class="col-5">
+                              John Doe
+                            </div>
+                            <div class="col-5">
+                              Admin
+                            </div>
+                            <div class="col-2 d-flex justify-content-md-end">
+                              <a href="api/print/pdf.slip.php?date=2018-08-27&amp;airport=0&amp;type=" target="_blank" class="btn btn-primary btn-sm mr-2">Edit</a> <a href="api/print/pdf.slip.returns.php?date=2018-08-27&amp;airport=0&amp;type=&amp;in=1" target="_blank" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="bg-white p-4">
+                          <h3 class="mb-4">Add Users</h2>
+                          <form>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group ">
+                              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group ">
+                              <input type="password" class="form-control" id="inputPasswordRepeat" placeholder="Repeate Password">
+                            </div>
+                            <fieldset class="form-group">
+                              <label class="d-block">Permissions</label>
+                              <div class="form-check d-inline mr-4">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                                <label class="form-check-label" for="gridRadios1">
+                                  Admin
+                                </label>
+                              </div>
+                              <div class="form-check d-inline">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Read Only
+                                </label>
+                              </div>
+                            </fieldset>
+                            <fieldset class="form-group mb-0">
+                              <label class="d-block">Select filters</label>
+                              <div class="row mb-4">
+                                <div class="col-5">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                      <label class="btn btn-secondary active">
+                                        <input type="radio" name="options" id="option3" autocomplete="off" checked> ALL
+                                      </label>
+                                      <label class="btn btn-secondary">
+                                        <input type="radio" name="options" id="option4" autocomplete="off"> MG
+                                      </label>
+                                      <label class="btn btn-secondary">
+                                        <input type="radio" name="options" id="option5" autocomplete="off"> PR
+                                      </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-7">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                      <label class="btn btn-secondary active">
+                                        <input type="radio" name="options" id="option6" autocomplete="off" checked> ALL
+                                      </label>
+                                      <label class="btn btn-secondary">
+                                        <input type="radio" name="options" id="option7" autocomplete="off"> LHR
+                                      </label>
+                                      <label class="btn btn-secondary">
+                                        <input type="radio" name="options" id="option8" autocomplete="off"> BHX
+                                      </label>
+                                      <label class="btn btn-secondary">
+                                        <input type="radio" name="options" id="option9" autocomplete="off"> LTN
+                                      </label>
+                                    </div>
+                                </div>
+                              </div>
+                            <div class="form-group mb-0">
+                              <button type="submit" class="btn btn-primary">Add New User</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-confirmations" role="tabpanel" aria-labelledby="v-pills-confirmations-tab">
+                  <div class="container">
+                    <div class="p-4 bg-white">
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="MGConfirmation-tab" data-toggle="tab" href="#MGConfirmation" role="tab" aria-controls="MGConfirmation" aria-selected="true">MG Confirmation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="MGCancellation-tab" data-toggle="tab" href="#MGCancellation" role="tab" aria-controls="MGCancellation" aria-selected="false">MG Cancellation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="PRConfirmation-tab" data-toggle="tab" href="#PRConfirmation" role="tab" aria-controls="PRConfirmation" aria-selected="false">PR Confirmation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="PRCancelation-tab" data-toggle="tab" href="#PRCancelation" role="tab" aria-controls="PRCancelation" aria-selected="false">PR Cancellation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="LHRPRConfirmation-tab" data-toggle="tab" href="#LHRPRConfirmation" role="tab" aria-controls="LHRPRConfirmation" aria-selected="false">LHR PR Confirmation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="LHRPRCancelation-tab" data-toggle="tab" href="#LHRPRCancelation" role="tab" aria-controls="LHRPRCancelation" aria-selected="false">LHR PR Cancellation</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="MGConfirmation" role="tabpanel" aria-labelledby="MGConfirmation-tab">
+
+                          <h3 class="py-4">Meet & Greet Confirmation</h3>
+
+                          <div class="form-group">
+                            <div class="card bg-light mb-3" id="editor-container4">
+                              <div class="card-body">
+                                <div>  <p style="text-align: center;"><img src="https://drivefly.co.uk/assets/designer/themes/default/designer/images/logo.png"></p>                  <hr><h3 style="text-align: center;">          Dear [[name]]</h3><h4 style="text-align: center;">Your booking has been confirmed.</h4><!--StartFragment--><h4 style="font-size: 18px;text-align: center;">Reference: <b><b></b><b><b>[[reference]]</b></b></b></h4><hr><p>Booking details:</p><table><tbody><tr><td>Name:</td><td>[[name]]</td></tr><tr><td>Contact Number:</td><td>[[mobile]]</td></tr><tr><td>Meeting time:</td><td>[[dateStart]] at [[timeStart]]</td></tr><tr><td>Coming back:</td><td>[[dateEnd]] at [[timeEnd]]</td></tr><tr><td>Airport:</td><td>[[airport]]</td></tr><tr><td>Service:</td><td>[[service]]</td></tr><tr><td>Departure terminal:</td><td>[[terminalStart]]</td></tr><tr><td>Arrival terminal:</td><td>[[terminalEnd]]</td></tr><tr><td>Car model:</td><td>[[carModel]]</td></tr><tr><td>Car colour:</td><td>[[carColour]]</td></tr><tr><td>Car plate:</td><td>[[carReg]]</td></tr><tr><td>Returning Flight Number:</td><td>[[returnFlight]]</td></tr><tr><td>Amount paid:</td><td>[[amount]]</td></tr></tbody></table><hr><p>[[extrasTable]]</p><hr><p style="text-align: center;"><i>For more information and instructions please visit our website. For any amendments or cancellations please contact us through our on-line contact form, reply to this email or via telephone.</i></p><h4 style="text-align: center;"><b>Drivefly Team</b></h4><p style="text-align: center;"><a href="https://drivefly.co.uk/" target="_blank">Drivefly.co.uk</a></p><p style="text-align: center;"><b>Instructions :</b> <a href="https://drivefly.co.uk/directions" target="_blank">https://drivefly.co.uk/directions</a></p><p style="text-align: center;"><a href="[[receipLink]]" target="_blank">For VAT receipt click here</a></p><p style="text-align: center;">Customer service: 07545 004 379 or 0203 667 2616</p><p style="text-align: center;">Admin: 020 3675 0544 / 07540 465 745 or <a href="mailto:bookings@drivefly.co.uk" target="">bookings@drivefly.co.uk</a></p><p style="text-align: center;"><br></p><p style="text-align: center;"><br></p><div style="text-align: center;font-size: 14px;"><b>Now you've booked your Airport Parking, consider saving even more with our recommended travel partners:-</b></div><div style="text-align: center;font-size: small;"><br></div><div style="font-size: small;"><div style="text-align: center;"><b>Car Hire</b>, Search, Compare &amp; Save</div><div style="text-align: center;">Compare 900 companies at over 53,000 locations.</div><div style="text-align: center;">Best price guaranteed</div><strong style="background-color: transparent;text-decoration: underline;font-size: inherit;vertical-align: baseline;text-align: center;"><b><a href="https://www.rentalcars.com/?affiliateCode=drivefly875&amp;_ga=2.127479309.1667681218.1530089477-1321173862.1528272915" target="_blank" style="background-color: transparent;text-decoration: underline;font-size: 11.9px;vertical-align: baseline;text-align: center;">https://www.rentalcars.com/?affiliateCode=drivefly875</a></b></strong></div><div style="font-size: small;"><strong style="background-color: transparent;text-decoration: underline;font-size: inherit;vertical-align: baseline;text-align: center;"><br></strong></div><div style="font-size: small;"><div style="text-align: center;"><b>Airport Lounges</b>, 400 lounges at over 250 airports worldwide</div><strong style="background-color: transparent;text-decoration: underline;font-size: inherit;vertical-align: baseline;text-align: center;"><b><a href="http://www.loungepass.com/tp/dri-103" target="_blank" style="background-color: transparent;text-decoration: underline;font-size: 11.9px;vertical-align: baseline;text-align: center;">http://www.loungepass.com/tp/dri-103</a></b></strong></div></div>
+                              </div>
+                            </div>
+                            <form class="form-inline mb-4">
+                              <div class="form-group mb-2">
+                                <label for="inputEmail4" class="mr-2">Sent test email to:</label>
+                                <input type="email" class="form-control mr-2" id="inputEmail4" placeholder="bartosh.s@gmail.com">
+                              </div>
+                              <button type="submit" class="btn btn-primary mb-2">Send</button>
+                            </form>
+                          </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="MGCancellation" role="tabpanel" aria-labelledby="MGCancellation-tab">
+                          <h3 class="py-4">Meet & Greet Cancellation</h3>
+
+                          <div class="form-group">
+                            <div class="card bg-light mb-3" id="editor-container5">
+                              <div class="card-body">
+                                <div>  <p style="text-align: center;"><img src="https://drivefly.co.uk/assets/designer/themes/default/designer/images/logo.png"></p>                  <hr><h3 style="text-align: center;">          Dear [[name]]</h3><!--StartFragment--><h4 style="color: red;font-size: 18px;text-align: center;">Your booking has been <u>Cancelled</u>.</h4><h4 style="font-size: 18px;text-align: center;">Reference: <b><b>[[reference]]</b></b></h4><h4 style="text-align: center;"></h4><hr><p>Booking details:</p><table><tbody><tr><td>Name:</td><td>[[name]]</td></tr><tr><td>Contact Number:</td><td>[[mobile]]</td></tr><tr><td>Meeting time:</td><td>[[dateStart]] at [[timeStart]]</td></tr><tr><td>Coming back:</td><td>[[dateEnd]] at [[timeEnd]]</td></tr><tr><td>Airport:</td><td>[[airport]]</td></tr><tr><td>Service:</td><td>[[service]]</td></tr><tr><td>Departure terminal:</td><td>[[terminalStart]]</td></tr><tr><td>Arrival terminal:</td><td>[[terminalEnd]]</td></tr><tr><td>Car model:</td><td>[[carModel]]</td></tr><tr><td>Car colour:</td><td>[[carColour]]</td></tr><tr><td>Car plate:</td><td>[[carReg]]</td></tr><tr><td>Returning Flight Number:</td><td>[[returnFlight]]</td></tr><tr><td>Amount paid:</td><td>[[amount]]</td></tr></tbody></table><hr><p style="text-align: center;"><b style="font-size: 18px;">Drivefly Team</b><br></p><p style="text-align: center;"><a href="https://drivefly.co.uk/" target="_blank">Drivefly.co.uk</a></p><p style="text-align: center;">Customer service: 07545 004 379 or 0203 667 2616</p><p style="text-align: center;">Admin: 020 3675 0544 / 07540 465 745 or <a href="mailto:bookings@drivefly.co.uk" target="">bookings@drivefly.co.uk</a></p></div>
+                              </div>
+                            </div>
+                            <form class="form-inline mb-4">
+                              <div class="form-group mb-2">
+                                <label for="inputEmail5" class="mr-2">Sent test email to:</label>
+                                <input type="email" class="form-control mr-2" id="inputEmail5" placeholder="bartosh.s@gmail.com">
+                              </div>
+                              <button type="submit" class="btn btn-primary mb-2">Send</button>
+                            </form>
+                          </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="PRConfirmation" role="tabpanel" aria-labelledby="PRConfirmation-tab">
+                          <h3 class="py-4">Park & Ride Confirmation</h3>
+
+                          <div class="form-group">
+                            <div class="card bg-light mb-3" id="editor-container6">
+                              <div class="card-body">
+                                <div>  <p style="text-align: center;"><img src="https://admin.drivefly.org/api/receipt/icpr.jpg"></p>                  <hr><h3 style="text-align: center;">          Dear [[name]]</h3><h4 style="text-align: center;">Your booking has been confirmed.</h4><!--StartFragment--><h4 style="font-size: 18px;text-align: center;">Reference: <b><b></b><b><b>[[reference]]</b></b></b></h4><hr><p>Booking details:</p><table><tbody><tr><td>Name:</td><td>[[name]]</td></tr><tr><td>Contact Number:</td><td>[[mobile]]</td></tr><tr><td>Meeting time:</td><td>[[dateStart]] at [[timeStart]]</td></tr><tr><td>Coming back:</td><td>[[dateEnd]] at [[timeEnd]]</td></tr><tr><td>Airport:</td><td>[[airport]]</td></tr><tr><td>Service:</td><td>[[service]]</td></tr><tr><td>Car model:</td><td>[[carModel]]<br></td></tr><tr><td>Car colour:</td><td>[[carColour]]</td></tr><tr><td>Car plate:</td><td>[[carReg]]</td></tr><tr><td>Returning Flight Number:</td><td>[[returnFlight]]</td></tr><tr><td>Passangers:</td><td>[[passNr]]</td></tr><tr><td>Amount paid:</td><td> [[amount]]</td></tr></tbody></table><hr><p>[[extrasTable]]</p><hr><div style="text-align: center;"><i>For more information and instructions please visit our website. For any amendments or cancellations please contact us through our on-line contact form, reply to this email or via telephone.</i></div><p></p><h4><b></b><p style="text-align: center;"><b><span style="font-size: 13.5pt;">I Can Park and Ride Team</span></b></p></h4><p style="text-align: center;"><a href="https://icanparkandride.com/" target="_blank">ICanParkAndRide.com</a></p><p style="text-align: center;"><b>Instructions :</b> <a href="https://icanparkandride.com/directions" target="_blank">ICanParkAndRide.com/directions</a></p><p style="text-align: center;"><a href="[[receipLink]]" target="_blank">For receipt click here</a></p><p style="text-align: center;">Customer service: 0121 2705 645 / 0121 6473 764 </p><p style="text-align: center;">Admin: 07540 465 745 or <a href="mailto:bookings@icanparkandride.com" target="">bookings@icanparkandride.com</a></p></div>
+                              </div>
+                            </div>
+                            <form class="form-inline mb-4">
+                              <div class="form-group mb-2">
+                                <label for="inputEmail6" class="mr-2">Sent test email to:</label>
+                                <input type="email" class="form-control mr-2" id="inputEmail6" placeholder="bartosh.s@gmail.com">
+                              </div>
+                              <button type="submit" class="btn btn-primary mb-2">Send</button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="PRCancelation" role="tabpanel" aria-labelledby="PRCancelation-tab">
+                          <h3 class="py-4">Park & Ride Cancellation</h3>
+
+                          <div class="form-group">
+                            <div class="card bg-light mb-3" id="editor-container7">
+                              <div class="card-body">
+                                <div>  <p style="text-align: center;"><img src="https://admin.drivefly.org/api/receipt/icpr.jpg"></p>                  <hr><h3 style="text-align: center;">          Dear [[name]]</h3><h4 style="text-align: center;color: red;">Your booking has been <u>Cancelled</u>.</h4><h4 style="text-align: center;">Reference: <b>[[reference]]</b></h4><p></p><hr><p>Booking details:</p><table><tbody><tr><td>Name:</td><td>[[name]]</td></tr><tr><td>Contact Number:</td><td>[[mobile]]</td></tr><tr><td>Meeting time:</td><td>[[dateStart]] at [[timeStart]]</td></tr><tr><td>Coming back:</td><td>[[dateEnd]] at [[timeEnd]]</td></tr><tr><td>Airport:</td><td>[[airport]]</td></tr><tr><td>Service:</td><td>[[service]]</td></tr><tr><td>Car model:</td><td>[[carModel]]</td></tr><tr><td>Car colour:</td><td>[[carColour]]</td></tr><tr><td>Car plate:</td><td>[[carReg]]</td></tr><tr><td>Returning Flight Number:</td><td>[[returnFlight]]</td></tr><tr><td>Passangers:</td><td>[[passNr]]</td></tr><tr><td>Amount paid:</td><td>[[amount]]</td></tr></tbody></table><hr><p style="text-align: center;"><b style="font-size: 18px;"><span style="font-size: 13.5pt;">I Can Park and Ride Team</span></b><br></p><p style="text-align: center;"><a href="https://icanparkandride.com/" target="_blank">ICanParkAndRide.com</a></p><p style="text-align: center;">Customer service: 0121 2705 645 / 0121 6473 764 </p><p style="text-align: center;">Admin: 07540 465 745 or <a href="mailto:bookings@icanparkandride.com" target="">bookings@icanparkandride.com</a></p></div>
+                              </div>
+                            </div>
+                            <form class="form-inline mb-4">
+                              <div class="form-group mb-2">
+                                <label for="inputEmail7" class="mr-2">Sent test email to:</label>
+                                <input type="email" class="form-control mr-2" id="inputEmail7" placeholder="bartosh.s@gmail.com">
+                              </div>
+                              <button type="submit" class="btn btn-primary mb-2">Send</button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="LHRPRConfirmation" role="tabpanel" aria-labelledby="LHRPRConfirmation-tab">
+                          <h3 class="py-4">LHR Park & Ride Confirmation</h3>
+
+                          <div class="form-group">
+                            <div class="card bg-light mb-3" id="editor-container8">
+                              <div class="card-body">
+                                <div>  <p style="text-align: center;"><img src="https://drivefly.co.uk/assets/designer/themes/default/designer/images/logo.png"></p>                  <hr><h3 style="text-align: center;">          Dear [[name]]</h3><h4 style="text-align: center;">Your booking has been confirmed.</h4><!--StartFragment--><h4 style="font-size: 18px;text-align: center;">Reference: <b><b></b><b><b>[[reference]]</b></b></b></h4><hr><p>Booking details:</p><table><tbody><tr><td>Name:</td><td>[[name]]</td></tr><tr><td>Contact Number:</td><td>[[mobile]]</td></tr><tr><td>Meeting time:</td><td>[[dateStart]] at [[timeStart]]</td></tr><tr><td>Coming back:</td><td>[[dateEnd]] at [[timeEnd]]</td></tr><tr><td>Airport:</td><td>[[airport]]</td></tr><tr><td>Service:</td><td>[[service]]</td></tr><tr><td>Departure terminal:</td><td>[[terminalStart]]</td></tr><tr><td>Arrival terminal:</td><td>[[terminalEnd]]</td></tr><tr><td>Car model:</td><td>[[carModel]]</td></tr><tr><td>Car colour:</td><td>[[carColour]]</td></tr><tr><td>Car plate:</td><td>[[carReg]]</td></tr><tr><td>Returning Flight Number:</td><td>[[returnFlight]]</td></tr><tr><td>Amount paid:</td><td>[[amount]]</td></tr></tbody></table><hr><p>[[extrasTable]]</p><hr><p style="text-align: center;"><i>For more information and instructions please visit our website. For any amendments or cancellations please contact us through our on-line contact form, reply to this email or via telephone.</i></p><h4 style="text-align: center;"><b>Drivefly Team</b></h4><p style="text-align: center;"><a href="https://drivefly.co.uk/" target="_blank">Drivefly.co.uk</a></p><p style="text-align: center;"><b>Instructions :</b> <a href="https://drivefly.co.uk/" target="_blank">https://drivefly.co.uk/</a></p><p style="text-align: center;"><a href="[[receipLink]]" target="_blank">For VAT receipt click here</a></p><p style="text-align: center;">Park &amp; Ride Reception Office: 020 3887 1799 / 020 3887 1800</p><p style="text-align: center;">Admin: 020 3675 0544 / 07540 465 745 or parkandride@drivefly.co.uk</p><p style="font-size: 14px;text-align: center;"><br></p><div style="font-size: 14px;text-align: center;"><b>Now you've booked your Airport Parking, consider saving even more with our recommended travel partners:-</b></div><div style="text-align: center;font-size: small;"><br></div><div style="font-size: small;"><div style="text-align: center;"><b>Car Hire</b>, Search, Compare &amp; Save</div><div style="text-align: center;">Compare 900 companies at over 53,000 locations.</div><div style="text-align: center;">Best price guaranteed</div><strong style="background-color: transparent;text-decoration: underline;font-size: inherit;vertical-align: baseline;text-align: center;"><b><a href="https://www.rentalcars.com/?affiliateCode=drivefly875&amp;_ga=2.127479309.1667681218.1530089477-1321173862.1528272915" target="_blank" style="background-color: transparent;text-decoration: underline;font-size: 11.9px;vertical-align: baseline;text-align: center;">https://www.rentalcars.com/?affiliateCode=drivefly875</a></b></strong></div><div style="font-size: small;"><strong style="background-color: transparent;text-decoration: underline;font-size: inherit;vertical-align: baseline;text-align: center;"><br></strong></div><div style="font-size: small;"><div style="text-align: center;"><b>Airport Lounges</b>, 400 lounges at over 250 airports worldwide</div><strong style="background-color: transparent;text-decoration: underline;font-size: inherit;vertical-align: baseline;text-align: center;"><b><a href="http://www.loungepass.com/tp/dri-103" target="_blank" style="background-color: transparent;text-decoration: underline;font-size: 11.9px;vertical-align: baseline;text-align: center;">http://www.loungepass.com/tp/dri-103</a></b></strong></div></div>
+                              </div>
+                            </div>
+                            <form class="form-inline mb-4">
+                              <div class="form-group mb-2">
+                                <label for="inputEmail8" class="mr-2">Sent test email to:</label>
+                                <input type="email" class="form-control mr-2" id="inputEmail8" placeholder="bartosh.s@gmail.com">
+                              </div>
+                              <button type="submit" class="btn btn-primary mb-2">Send</button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="LHRPRCancelation" role="tabpanel" aria-labelledby="LHRPRCancelation-tab">
+                          <h3 class="py-4">LHR Park & Ride Cancellation</h3>
+
+                          <div class="form-group">
+                            <div class="card bg-light mb-3" id="editor-container9">
+                              <div class="card-body">
+                                <div>  <p style="text-align: center;"><img src="https://drivefly.co.uk/assets/designer/themes/default/designer/images/logo.png"></p>                  <hr><h3 style="text-align: center;">          Dear [[name]]</h3><!--StartFragment--><h4 style="color: red;font-size: 18px;text-align: center;">Your booking has been <u>Cancelled</u>.</h4><h4 style="font-size: 18px;text-align: center;">Reference: <b><b>[[reference]]</b></b></h4><h4 style="text-align: center;"></h4><hr><p>Booking details:</p><table><tbody><tr><td>Name:</td><td>[[name]]</td></tr><tr><td>Contact Number:</td><td>[[mobile]]</td></tr><tr><td>Meeting time:</td><td>[[dateStart]] at [[timeStart]]</td></tr><tr><td>Coming back:</td><td>[[dateEnd]] at [[timeEnd]]</td></tr><tr><td>Airport:</td><td>[[airport]]</td></tr><tr><td>Service:</td><td>[[service]]</td></tr><tr><td>Departure terminal:</td><td>[[terminalStart]]</td></tr><tr><td>Arrival terminal:</td><td>[[terminalEnd]]</td></tr><tr><td>Car model:</td><td>[[carModel]]</td></tr><tr><td>Car colour:</td><td>[[carColour]]</td></tr><tr><td>Car plate:</td><td>[[carReg]]</td></tr><tr><td>Returning Flight Number:</td><td>[[returnFlight]]</td></tr><tr><td>Amount paid:</td><td>[[amount]]</td></tr></tbody></table><hr><p style="text-align: center;"><b style="font-size: 18px;">Drivefly Team</b><br></p><p style="text-align: center;"><a href="https://drivefly.co.uk/" target="_blank">Drivefly.co.uk</a></p><p style="text-align: center;">Customer service: 07545 004 379 or 0203 667 2616</p><p style="text-align: center;">Admin: 020 3675 0544 / 07540 465 745 or <a href="mailto:bookings@drivefly.co.uk" target="">bookings@drivefly.co.uk</a></p></div>
+                              </div>
+                            </div>
+                            <form class="form-inline mb-4">
+                              <div class="form-group mb-2">
+                                <label for="inputEmail9" class="mr-2">Sent test email to:</label>
+                                <input type="email" class="form-control mr-2" id="inputEmail9" placeholder="bartosh.s@gmail.com">
+                              </div>
+                              <button type="submit" class="btn btn-primary mb-2">Send</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-printer" role="tabpanel" aria-labelledby="v-pills-printer-tab">
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              
+            </div>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container4', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container5', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container6', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container7', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container8', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
+        <script type="text/javascript">
+          var quill = new Quill('#editor-container9', {
+            modules: {
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block']
+              ]
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow'  // or 'bubble'
+          });
+        </script>
+
+        <script type="text/javascript">
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
+
+        <script type="text/javascript">
+
+            $(function () {
+              $('#sandbox-container .input-daterange').datepicker({ });
+            })
+        </script>
+        <script type="text/javascript">
+            $('#datepicker').datepicker();
+        </script>
+    </body>
+</html>
